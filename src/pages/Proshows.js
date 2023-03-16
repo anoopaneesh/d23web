@@ -9,6 +9,9 @@ const Proshows = () => {
       <div className='relative top-48  '>
 
       <h1 className=' text-7xl font-chakra text-yellow-400 w-fit mx-8  md:mx-24 text-center ' >Proshows</h1>
+      {/* div for underline */}
+      <div className='mx-8 md:mx-24 w-48  h-1 bg-yellow-400 my-4'></div>
+
 
       <img src="https://dyuksha.org/Events%20Page/pro1.jpg" alt="" className=' w-4/5 md:w-3/5 my-24 m-auto blur-sm hover:blur-0 transition-all ease-in-out duration-200 hover:cursor-pointer hover:scale-105' />
       <img src="https://dyuksha.org/Events%20Page/pro3.jpg" alt="" className=' w-4/5 md:w-3/5 m-auto blur-sm hover:blur-0 transition-all ease-in-out duration-200 hover:cursor-pointer hover:scale-105'  />
