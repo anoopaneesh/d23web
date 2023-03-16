@@ -6,6 +6,8 @@
 :root {
   --foreground: #cfcfcf;
   --background: rgb(32, 5, 50);
+  --heading:#02D7F2;
+  --c_red:#FD0130;
 }
 
 body {

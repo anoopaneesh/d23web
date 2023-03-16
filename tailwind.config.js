@@ -10,8 +10,9 @@ module.exports = {
         secondary: "#0af",
         background: "#102",
         foreground: "#dadada",
-        heading:"#FCEE09",
-        transparent_black:"#000a"
+        heading:"#02D7F2",
+        transparent_black:"#000a",
+        c_red:"#FD0130"
       },
       fontFamily: {
         chakra: ['Chakra Petch', 'sans-serif']

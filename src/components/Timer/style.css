@@ -28,3 +28,18 @@
     font-size: 4rem;
     padding: 0 .5rem;
   }
+
+  @media(max-width:500px){
+    li {
+      display: inline-block;
+      font-size: 0.8em;
+      list-style-type: none;
+      padding: 1em;
+      text-transform: uppercase;
+    }
+    
+    li span {
+      display: block;
+      font-size: 3rem;
+    }
+  }

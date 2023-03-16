@@ -8,7 +8,6 @@ function App() {
   useNavContext().changeCurrentPage('home')
   return (
     <div className="bg-background font-chakra">
-      
       <Hero />
       <About />
     </div>

@@ -33,7 +33,7 @@ const Timer = () => {
             }, 0)
     }, [])
     return (
-        <div className="container_cd">
+        <div className="container_cd relative z-20">
             <div id="countdown">
                 <ul>
                     <li><span id="days">{days}</span>days</li>
