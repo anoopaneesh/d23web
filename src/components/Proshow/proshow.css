@@ -1,0 +1,3 @@
+.proshow::-webkit-scrollbar {
+    display: none;
+}
