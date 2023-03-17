@@ -24,7 +24,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div> */}
-            <p className='absolute top-[50%] left-96 -translate-y-1/2' onClick={handleModalClose}><i class="fa-solid fa-phone"></i></p>
+            <p className='absolute top-[50%] left-10 md:left-96 -translate-y-1/2' onClick={handleModalClose}><i class="fa-solid fa-phone"></i></p>
             <div className="bg-black border-t border-heading h-16 grid place-items-center">
                 {window.innerWidth < 700 ? <img src={logo_mobile} alt="" className='w-8 object-contain text-center' />: <img src={logo} alt="" className='w-44 object-contain text-center' />}
             </div>

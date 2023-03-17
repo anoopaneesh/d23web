@@ -38,7 +38,7 @@ function Navbar() {
     <>
       {/* <img src={logo} className="w-8 absolute left-[50%] -translate-x-1/2" /> */}
       {/* bg-[#020000bf] */}
-      <div className={`border-l border-[#fff3] bg-[#fFFFFF15] backdrop-blur-2xl pl-7 fixed h-full top-0 right-0 w-1/2 z-30 transition-all translate-x-[100%] ${navOpen && 'translate-x-0'} mobile_shad`}>
+      <div className={`border-l border-[#fff3] bg-[#fFFFFF15] backdrop-blur-2xl pl-7 fixed h-full top-0 right-0 w-1/2 z-30 ${navOpen ? 'block' : 'hidden'} mobile_shad`}>
         <span onClick={handleNavClose} className='text-[#777] mt-4 text-3xl absolute top-0 right-5'><i class="fa-solid fa-xmark"></i></span>
         <div className='links-mobile links flex flex-col text-xl justify-center h-full space-y-20'>
           <a href="/" className={`no_drag select-none ${currentColor('home')}`}>Home</a>
