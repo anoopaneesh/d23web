@@ -1,3 +1,56 @@
 .proshow::-webkit-scrollbar {
     display: none;
 }
+
+
+.banner{
+
+      /* background-image: url("http://localhost:3000/static/media/pr2.5d307db70167fc31b719.png");
+  background-image: -webkit-linear-gradient(left, 
+    rgba(0,0,0,0.9) 0%, 
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,1) 100%
+  ),
+  url("http://localhost:3000/static/media/pr2.5d307db70167fc31b719.png");
+background-repeat: no-repeat; */
+/* height: 100vh; */
+}
+
+
+.proshow_day1{
+
+    background-image: url("../../assets/jpeg/pr1.png");
+    background-image: -webkit-linear-gradient(left, 
+      rgba(0,0,0,0.9) 0%, 
+      rgba(0,0,0,0) 20%,
+      rgba(0,0,0,0) 80%,
+      rgba(0,0,0,0.9) 100%
+    ),
+    url("../../assets/jpeg/pr1.png");  background-repeat: no-repeat;
+
+}
+
+@media only screen  and (min-width:720px)  {
+    
+    .proshow_day1:hover, .proshow_day2:hover{
+        /*  */
+        background-position:  right;
+        background-size:121%;
+        transition: 2s;
+    }
+}
+
+.proshow_day2{
+
+    background-image: url("../../assets/jpeg/pr2.png");
+    background-image: -webkit-linear-gradient(left, 
+      rgba(0,0,0,0.9) 0%, 
+      rgba(0,0,0,0) 20%,
+      rgba(0,0,0,0) 80%,
+      rgba(0,0,0,0.9) 100%
+    ),
+    url("../../assets/jpeg/pr2.png");  background-repeat: no-repeat;
+
+}
+  
