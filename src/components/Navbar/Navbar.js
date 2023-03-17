@@ -26,11 +26,12 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   function handleNavOpen() {
-    if (window.innerWidth < 500) {
-      setNavOpen(true)
-    }
+    console.log('reached')
+    setNavOpen(true)
+
   }
   function handleNavClose() {
+
     setNavOpen(false)
   }
   return (
