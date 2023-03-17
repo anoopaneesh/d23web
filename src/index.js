@@ -12,6 +12,7 @@ import Workshops from './pages/Workshops';
 import Proshows from './pages/Proshows';
 import Dept from './pages/Dept';
 import FirebaseProvider from './context/FirebaseContext';
+import Error from './Error';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,15 +25,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/workshops",
-    element: <Workshops />
+    element: <Error />
   },
   {
     path: "/proshows",
-    element: <Proshows />
+    element: <Error />
   },
   {
     path: "/dept/:id",
-    element: <Dept />
+    element: <Error />
   }
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));

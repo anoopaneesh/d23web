@@ -9,7 +9,7 @@ const CurvedContainer = ({ logo, clip, className, to, text }) => {
           <Link to={`/dept/${to}`}><img src={logo} className="w-full h-full" alt="" /></Link>
         </div>
       </div>
-      {text && <h3 className='text-white mt-8 font-chakra font-bold text-center uppercase text-2xl'>{text}</h3>}
+      {text && <h3 className='text-white mt-4 md:mt-8 font-chakra font-bold text-center uppercase text-2xl'>{text}</h3>}
     </div>
 
   )

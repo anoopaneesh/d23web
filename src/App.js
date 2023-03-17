@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import { useNavContext } from './context/NavContext';
 import About from './screens/About';
@@ -10,6 +11,7 @@ function App() {
     <div className="bg-background font-chakra">
       <Hero />
       <About />
+      <Footer />
     </div>
   );
 }

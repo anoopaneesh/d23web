@@ -6,8 +6,21 @@
 :root {
   --foreground: #cfcfcf;
   --background: rgb(32, 5, 50);
-  --heading:#02D7F2;
-  --c_red:#FD0130;
+  --heading: #02D7F2;
+  --c_red: #FD0130;
+}
+
+@font-face {
+  font-family: "techno";
+  src: local("AssistantRegular"),
+    url("./assets/fonts/technoboard.ttf") format("truetype");
+  font-weight: normal;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
 }
 
 body {
