@@ -19,8 +19,8 @@ const Proshows = () => {
         <div className="mx-8 md:mx-24 w-48  h-1 bg-yellow-400 my-4"></div>
 
         <div className="flex md:flex-row flex-col items-center justify-center mt-16">
-          <div className="banner h-72 proshow_day1  bg-contain w-11/12 md:w-3/5   hover:blur-0 transition-all ease-in-out duration-200 hover:cursor-pointer hover:scale-105"></div>
-          <div className="ml-8">
+          <div className="banner bg-center m-1	 h-72 proshow_day1 bg-cover md:bg-contain w-11/12 md:w-3/5   hover:blur-0 transition-all ease-in-out duration-200 hover:cursor-pointer hover:scale-105"></div>
+          <div className="ml-8 mt-16 md:mt-0">
             <h1 className=" text-5xl font-chakra text-white font-bold w-fit mx-8  md:mx-2 text-center ">
               DAY 1
             </h1>
@@ -35,7 +35,7 @@ const Proshows = () => {
 
 
         <div className="flex md:flex-row-reverse flex-col items-center justify-center mt-16">
-        <div className="banner h-72 proshow_day2  bg-contain w-11/12 md:w-3/5   hover:blur-0 transition-all ease-in-out duration-200 hover:cursor-pointer hover:scale-105"></div>
+        <div className="banner h-72 bg-center m-1	 proshow_day2  bg-cover md:bg-contain  w-11/12 md:w-3/5   hover:blur-0 transition-all ease-in-out duration-200 hover:cursor-pointer hover:scale-105"></div>
           <div className="mr-8">
             <h1 className=" text-5xl font-chakra text-white font-bold w-fit mx-8  md:mx-2 text-center ">
               DAY 3
