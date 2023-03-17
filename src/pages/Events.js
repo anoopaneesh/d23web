@@ -18,26 +18,32 @@ import mech_logo from '../assets/jpeg/branches/mech.jpg'
 const Events = () => {
   useNavContext().changeCurrentPage('events')
   return (
-    <div className='bg-black min-h-screen pb-52'>
+    <div className='bg-black min-h-screen pb-52 font-chakra'>
       <Navbar />
-        <div className='items-center md:items-start flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 justify-center mt-20'>
-          <CurvedContainer logo={pelicula_logo} clip />
-          <CurvedContainer logo={game_logo} clip />
-          <CurvedContainer logo={informals_logo} clip />
+      <div className='items-center md:items-start flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 justify-center mt-20'>
+        <CurvedContainer logo={pelicula_logo} clip text="Pelicula" />
+        <CurvedContainer logo={game_logo} clip text="Game Gala" />
+        <CurvedContainer logo={informals_logo} clip text="Informals" />
+      </div>
+      <div className="h-40 w-full"></div>
+      <div className='w-full flex justify-center mb-[50px]'>
+        <div className='text-4xl md:text-7xl text-heading mb-8 font-bold flex justify-start items-center'>
+          <h2 className='-translate-x-5'>Department</h2>
+          <p className='text-transparent text_stroke'>Events</p>
         </div>
-        <div className="h-40 w-full"></div>
-        <div className='items-center md:items-start flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 justify-center'>
-          <CurvedContainer logo={cse_logo} />
-          <CurvedContainer logo={civil_logo} />
-          <CurvedContainer logo={ece_logo} />
-        </div>
-        <div className="h-20 w-full"></div>
-        <div className='items-center md:items-start flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 justify-center'>
-          <CurvedContainer logo={eee_logo} />
-          <CurvedContainer logo={ice_logo} />
-          <CurvedContainer logo={mech_logo} />
-        </div>
-      
+      </div>
+      <div className='items-center md:items-start flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 justify-center'>
+        <CurvedContainer logo={cse_logo} to="cse" />
+        <CurvedContainer logo={civil_logo} to="civil" />
+        <CurvedContainer logo={ece_logo} to="ece" />
+      </div>
+      <div className='h-3'></div>
+      <div className='items-center md:items-start flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 justify-center'>
+        <CurvedContainer logo={eee_logo} to="eee" />
+        <CurvedContainer logo={ice_logo} to="ice" />
+        <CurvedContainer logo={mech_logo} to="mech" />
+      </div>
+
 
 
     </div>

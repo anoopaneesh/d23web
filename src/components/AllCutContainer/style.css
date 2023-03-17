@@ -1,0 +1,30 @@
+.all_cut {
+    background: var(--c_red);
+    display: grid;
+    place-items: center;
+}
+
+.all_cut .inner {
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+
+    background: black;
+    overflow: hidden;
+}
+
+.all_cut .inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.3s ease-in-out;
+}
+
+.all_cut .inner img:hover {
+    scale: 1.3;
+    cursor: pointer;
+}
+
+.all_cut  .clip_path {
+    -webkit-clip-path: polygon(12% 0%, 0% 13%, 0 100%, 88% 100%, 100% 88%, 100% 0);
+    clip-path: polygon(12% 0%, 0% 13%, 0 100%, 88% 100%, 100% 88%, 100% 0);
+}

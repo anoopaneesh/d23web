@@ -6,11 +6,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Navbar from './components/Navbar/Navbar';
 import NavProvider from './context/NavContext';
 import Events from './pages/Events';
 import Workshops from './pages/Workshops';
 import Proshows from './pages/Proshows';
+import Dept from './pages/Dept';
+import FirebaseProvider from './context/FirebaseContext';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,23 +19,29 @@ const router = createBrowserRouter([
 
   },
   {
-    path:"/events",
-    element:<Events />
+    path: "/events",
+    element: <Events />
   },
   {
-    path:"/workshops",
+    path: "/workshops",
     element: <Workshops />
   },
   {
-    path:"/proshows",
-    element:<Proshows />
+    path: "/proshows",
+    element: <Proshows />
+  },
+  {
+    path: "/dept/:id",
+    element: <Dept />
   }
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavProvider>
-      <RouterProvider router={router} />
-    </NavProvider>
+    <FirebaseProvider>
+      <NavProvider>
+        <RouterProvider router={router} />
+      </NavProvider>
+    </FirebaseProvider>
   </React.StrictMode>
 );

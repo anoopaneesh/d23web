@@ -1,6 +1,9 @@
 .text_stroke {
   -webkit-text-stroke: 1.5px var(--heading);
 }
+.text_stroke_prime{
+  -webkit-text-stroke: 1.5px var(--c_red);
+}
 
 .no_drag {
   -webkit-user-drag: none;
@@ -43,6 +46,19 @@
 .glitch:hover:after {
   text-shadow: -5px 0 var(--heading);
   animation: glitch-anim-2 0.3s infinite ease-in-out alternate-reverse;
+}
+
+@media(max-width:600px){
+  .glitch:before {
+    text-shadow: 4px 0 var(--heading);
+    animation: glitch-anim-1 0.4s infinite ease-in-out alternate-reverse;
+  }
+
+  
+  .glitch:after {
+    text-shadow: -5px 0 var(--heading);
+    animation: glitch-anim-2 0.3s infinite ease-in-out alternate-reverse;
+  }
 }
 
 @keyframes glitch-anim-1 {

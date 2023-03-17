@@ -1,26 +1,33 @@
 .curved_container {
-    background: var(--c_red);
+    background: var(--heading);
     display: grid;
     place-items: center;
 }
-.inner{
-    width:calc(100% - 5px);
-    height:calc(100% - 5px);
-    
+
+.curved_container:hover {
+    background-color: white;
+}
+
+.inner {
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
     background: black;
     overflow: hidden;
 }
-.inner > img{
+
+.inner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: scale 0.3s ease-in-out;
 }
-.inner>img:hover{
-    scale: 1.3;
+
+.inner img:hover {
+    scale: 1.02;
     cursor: pointer;
 }
-.clip_path{
-    -webkit-clip-path: polygon(0% 100%, 1% 0%, 90% 0, 100% 7%, 100% 100%);
-    clip-path: polygon(0% 100%, 1% 0%, 90% 0, 100% 7%, 100% 100%);
+
+.clip_path {
+    -webkit-clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
+    clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
 }
