@@ -13,9 +13,38 @@
 }
 
 @font-face {
-  font-family: "techno";
+  font-family: "a";
   src: local("AssistantRegular"),
-    url("./assets/fonts/Dragrace-MV4OY.ttf") format("truetype");
+    url("./assets/fonts/a.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "asian";
+  src: local("AssistantRegular"),
+    url("./assets/fonts/AAsianHiro-vmv3L.ttf") format("truetype");
+    
+  font-weight: normal;
+}
+@font-face {
+  font-family: "punish";
+  src: local("AssistantRegular"),
+    url("./assets/fonts/Punishment-DPwE.ttf") format("truetype");
+    
+  font-weight: normal;
+}
+@font-face {
+  font-family: "lordcorp";
+  src: local("AssistantRegular"),
+    url("./assets/fonts/LordcorpsStencil-rg4dx.ttf") format("truetype");
+    
+  font-weight: normal;
+}
+@font-face {
+  font-family: "digital";
+  src: local("AssistantRegular"),
+    url("./assets/fonts/Digital7Mono-Yz9J4.ttf") format("truetype");
+    
   font-weight: normal;
 }
 

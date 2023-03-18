@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Timer from '../Timer/Timer'
 // import intro from '../assets/videos/Intro2.mp4'
 import bg_img from '../../assets/jpeg/cp2077_3.jpg'
@@ -6,6 +6,15 @@ import bg_loop from '../../assets/gif/loop.gif'
 import Navbar from '../Navbar/Navbar'
 
 const Hero = () => {
+  const fonts = ["a", "Chakra Petch", "asian", "punish", "lordcorp", "digital"]
+  const randomFont = () =>  fonts[Math.floor(Math.random() * fonts.length)] 
+  const [font,setFont] = useState(fonts[1])
+  useEffect(() => {
+    const interval = setInterval(()=>{
+      setFont(randomFont())
+    },1700)
+    return () => {clearInterval(interval)}
+  })
   return (
     <>
       {/* <video src={intro} muted autoPlay loop className='absolute top-0 -z-0 w-full h-full object-cover' /> */}
@@ -16,7 +25,7 @@ const Hero = () => {
 
 
         <div className='mt-[30%] md:mt-20'>
-          <h1 className="text-center glitch no_drag text-5xl md:text-8xl font-bold italic text-white" data-text="DYUKSHA '23">DYUKSHA&nbsp;'23</h1>
+          <h1 className="text-center glitch no_drag text-5xl md:text-8xl font-bold  text-white" data-text="DYUKSHA '23" style={{ fontFamily: font}}>DYUKSHA&nbsp;'23</h1>
           {window.innerWidth < 700 ? <h3 className='text-center text-foreground text-sm md:text-xl mt-4 md:mt-10 relative'>THE TECHNO-CULTURAL PROTAGONIST<br /> SHALL RISE AGAIN</h3> : <h3 className='text-center text-foreground text-sm md:text-xl mt-4 md:mt-10 relative'>THE TECHNO-CULTURAL PROTAGONIST SHALL RISE AGAIN</h3>}
           <div className='h-20'></div>
           <div className='flex justify-center mt-5 md:-mt-10'>
