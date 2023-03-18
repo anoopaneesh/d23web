@@ -73,7 +73,7 @@ const Dept = (props) => {
       <AnimatePresence>
         {modelOpen && <ProShowModal handleClose={closeModal}>
           <div className='shad grid place-items-center max-h-[100vh] bg-[#000a] backdrop-blur-xl overflow-scroll md:overflow-hidden'>
-            <div className='border border-heading flex flex-col md:flex-row px-4 md:px-0'>
+            <div className='md:border border-heading flex flex-col md:flex-row px-4 md:px-0'>
               <div id="image_parent" className='flex justify-center pt-4 md:pb-4 md:pl-4  md:h-[500px]'>
                 <img src={selected.url} alt="" className='h-full w-auto aspect-square object-cover' />
               </div>
@@ -88,7 +88,7 @@ const Dept = (props) => {
                   <div className='h-5'></div>
                   <p className='text-lg'>{`Contact : ${selected.contact}`}</p>
                 </div>
-                <div className='flex justify-center p-6 md:pb-6 pb-16 md:justify-end space-x-4'>
+                <div className='flex justify-center p-6 md:pb-6 pb-40 md:justify-end space-x-4'>
                   <a className='text-center' onClick={closeModal}><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
                       : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
@@ -131,7 +131,7 @@ const Dept = (props) => {
           >
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 2</h2><span>01/04/2023</span></div>
-            <div className='md:space-y-0 space-y-8 flex md:space-x-3 md:flex-row flex-col'>
+            <div className='md:space-y-0 space-y-8 flex md:space-x-3 md:flex-row flex-col grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
               {listday2.map(item => {
                 item.day = 2
                 return <EventContainer item={item} onClick={handleSelect} />

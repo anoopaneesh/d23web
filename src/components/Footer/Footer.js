@@ -29,7 +29,7 @@ const Footer = () => {
                 </motion.div>}
             </AnimatePresence>
             <p className='absolute top-[50%] left-10 md:left-96 -translate-y-1/2' onClick={handleModal}><i className="fa-solid fa-phone"></i></p>
-            <div className="bg-black border-t border-heading h-16 grid place-items-center">
+            <div className="bg-black border-t border-heading h-24 grid place-items-center">
                 {window.innerWidth < 700 ? <img src={logo_mobile} alt="" className='w-8 object-contain text-center' /> : <img src={logo} alt="" className='w-44 object-contain text-center' />}
             </div>
             <div className='absolute top-[50%] right-10 md:right-96 -translate-y-1/2 flex space-x-4 text-xl'>

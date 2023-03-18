@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/events",
-    element: <Events />
+    element: <Error />
   },
   {
     path: "/workshops",
@@ -33,11 +33,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dept/:id",
-    element: <Dept />
+    element: <Error />
   },
   {
     path: "/test/:id",
-    element: <Dept />
+    element: <Error />
   },
   {
     path: "/error",
