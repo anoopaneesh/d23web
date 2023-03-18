@@ -7,10 +7,12 @@ import { useNavContext } from '../context/NavContext';
 import { AnimatePresence, motion } from 'framer-motion'
 import ProShowModal from '../components/ProShowModal/ProShowModal';
 import Footer from '../components/Footer/Footer';
+
+import no_image from '../assets/jpeg/No_Image.png'
 const Dept = (props) => {
 
   const { id } = useParams()
-  const { day1, day2, day3 } = useFirebaseContext()
+  const { day1, day2, day3,getDaysData} = useFirebaseContext()
   const [listday1, setListday1] = useState([])
   const [listday2, setListday2] = useState([])
   const [listday3, setListday3] = useState([])
@@ -25,7 +27,7 @@ const Dept = (props) => {
       document.body.style.top = `-${window.scrollY}px`;
     }
 
-    document.getElementById('dept-b').style.filter = 'blur(10px)'
+    // document.getElementById('dept-b').style.filter = 'blur(10px)'
     setModalOpen(true)
   }
   function closeModal() {
@@ -39,27 +41,29 @@ const Dept = (props) => {
       document.body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
-    document.getElementById('dept-b').style.filter = 'blur(0)'
+    // document.getElementById('dept-b').style.filter = 'blur(0)'
 
     setSelected({})
     setModalOpen(false)
-    window.location.reload()
+    // window.location.reload()
   }
   useEffect(() => {
     document.documentElement.style.setProperty('--heading', '#FFEE08')
+    getDaysData(id)
+    return () => {document.documentElement.style.setProperty('--heading', '#02d7f2')}
   }, [])
   useEffect(() => {
-
-    setListday1(day1.filter(el => el.dept === id))
+    if(!day1 || day1.length == 0) return 
+    setListday1( day1.filter(el => el.dept === id))
 
   }, [day1])
   useEffect(() => {
-
-    setListday2(day2.filter(el => el.dept === id))
+    if(!day2 || day2.length == 0) return 
+    setListday2( day2.filter(el => el.dept === id))
   }, [day2])
   useEffect(() => {
-
-    setListday3(day3.filter(el => el.dept === id))
+    if(!day2 || day2.length == 0) return 
+    setListday3( day3.filter(el => el.dept === id))
   }, [day3])
 
 
@@ -69,13 +73,13 @@ const Dept = (props) => {
     openModal()
   }
   return (
-    <div className='about min-h-screen bg-black font-chakra text-white'>
+    <div className='about min-h-screen font-chakra text-white'>
       <AnimatePresence>
         {modelOpen && <ProShowModal handleClose={closeModal}>
           <div className='shad grid place-items-center max-h-[100vh] bg-[#000a] backdrop-blur-xl overflow-scroll md:overflow-hidden'>
             <div className='md:border border-heading flex flex-col md:flex-row px-4 md:px-0'>
               <div id="image_parent" className='flex justify-center pt-4 md:pb-4 md:pl-4  md:h-[500px]'>
-                <img src={selected.url} alt="" className='h-full w-auto aspect-square object-cover' />
+                <img src={selected.url || no_image} alt="" className='h-full w-auto aspect-square object-cover' />
               </div>
               <div className='md:flex md:flex-col md:justify-between max-w-lg'>
                 <div className='px-4 mt-4 flex flex-col space-y-3'>
@@ -108,7 +112,7 @@ const Dept = (props) => {
       </AnimatePresence>
       <div id="dept-b">
         <Navbar />
-        <div className='w-2/3 m-auto pt-10 pb-10'>
+        <div className='w-2/3 m-auto pb-10 pt-44'>
           <div className='text-6xl md:text-7xl text-heading mb-8 font-bold flex justify-start items-baseline'>
             {/* <div className='w-[1px] h-16 -translate-x-10 bg-heading'></div> */}
             <p>{id.toUpperCase()}</p>

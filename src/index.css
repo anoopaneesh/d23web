@@ -6,7 +6,7 @@
 @layer base {
   :root {
     --foreground: rgb(207, 207, 207);
-    --heading: rgb(2, 215, 242);
+    --heading: #02d7f2;
     --c_red: rgb(253, 1, 48);
     --c_yellow: rgb(255, 238, 8);
   }

@@ -20,7 +20,7 @@ const Proshow = () => {
     function openModal() {
         document.body.style.position = 'fixed';
         document.body.style.top = `-${window.scrollY}px`;
-        document.getElementById('proshow-b').style.filter = 'blur(10px)'
+        // document.getElementById('proshow-b').style.filter = 'blur(10px)'
         setModalOpen(true)
 
     }
@@ -29,7 +29,7 @@ const Proshow = () => {
         document.body.style.position = '';
         document.body.style.top = '';
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        document.getElementById('proshow-b').style.filter = 'blur(0px)'
+        // document.getElementById('proshow-b').style.filter = 'blur(0px)'
         setModalOpen(false)
     }
     function openDay1() {
@@ -112,7 +112,7 @@ const Proshow = () => {
             </AnimatePresence>
             <div id="proshow-b">
                 <Navbar />
-                <div className='proshow_inner mt-8'>
+                <div className='proshow_inner mt-8 pt-32'>
                     <div class="proshows md:space-y-0 space-y-8">
                         <div class="container-shows">
                             <div class="image-container">

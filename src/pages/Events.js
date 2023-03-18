@@ -20,7 +20,7 @@ const Events = () => {
   useNavContext().changeCurrentPage('events')
   return (
     <>
-      <div className='min-h-screen pb-52 font-chakra bg-black about'>
+      <div className='min-h-screen pb-52 font-chakra about pt-32'>
         <Navbar />
 
         <div className="h-10 w-full"></div>
