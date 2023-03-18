@@ -1,7 +1,7 @@
 import React from 'react'
-import { useNavContext } from '../context/NavContext'
+import { useNavContext } from '../../context/NavContext'
 const Workshops = () => {
-    useNavContext().changeCurrentPage('workshops')
+  useNavContext().changeCurrentPage('workshops')
   return (
     <div>Workshops</div>
   )

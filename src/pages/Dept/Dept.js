@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 import { useNavigation, useParams } from "react-router-dom";
-import { useFirebaseContext } from '../context/FirebaseContext';
-import EventContainer from '../components/EventContainer/EventContainer';
-import { useNavContext } from '../context/NavContext';
+import { useFirebaseContext } from '../../context/FirebaseContext';
+import EventContainer from '../../components/EventContainer/EventContainer';
+import { useNavContext } from '../../context/NavContext';
 import { AnimatePresence, motion } from 'framer-motion'
-import ProShowModal from '../components/ProShowModal/ProShowModal';
-import Footer from '../components/Footer/Footer';
+import ProShowModal from '../../components/ProShowModal/ProShowModal';
+import Footer from '../../components/Footer/Footer';
 
-import no_image from '../assets/jpeg/No_Image.png'
+import no_image from '../../assets/jpeg/No_Image.png'
 const Dept = (props) => {
 
   const { id } = useParams()
-  const { day1, day2, day3,getDaysData} = useFirebaseContext()
+  const { day1, day2, day3, getDaysData } = useFirebaseContext()
   const [listday1, setListday1] = useState([])
   const [listday2, setListday2] = useState([])
   const [listday3, setListday3] = useState([])
@@ -50,20 +50,20 @@ const Dept = (props) => {
   useEffect(() => {
     document.documentElement.style.setProperty('--heading', '#FFEE08')
     getDaysData(id)
-    return () => {document.documentElement.style.setProperty('--heading', '#02d7f2')}
+    return () => { document.documentElement.style.setProperty('--heading', '#02d7f2') }
   }, [])
   useEffect(() => {
-    if(!day1 || day1.length == 0) return 
-    setListday1( day1.filter(el => el.dept === id))
+    if (!day1 || day1.length == 0) return
+    setListday1(day1.filter(el => el.dept === id))
 
   }, [day1])
   useEffect(() => {
-    if(!day2 || day2.length == 0) return 
-    setListday2( day2.filter(el => el.dept === id))
+    if (!day2 || day2.length == 0) return
+    setListday2(day2.filter(el => el.dept === id))
   }, [day2])
   useEffect(() => {
-    if(!day2 || day2.length == 0) return 
-    setListday3( day3.filter(el => el.dept === id))
+    if (!day2 || day2.length == 0) return
+    setListday3(day3.filter(el => el.dept === id))
   }, [day3])
 
 
@@ -123,7 +123,7 @@ const Dept = (props) => {
           >
             <div className='flex  items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 1</h2><span>31/03/2023</span></div>
-            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
+            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
               {listday1.map(item => {
                 item.day = 1
                 return <EventContainer item={item} onClick={handleSelect} />
@@ -135,7 +135,7 @@ const Dept = (props) => {
           >
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 2</h2><span>01/04/2023</span></div>
-            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
+            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
               {listday2.map(item => {
                 item.day = 2
                 return <EventContainer item={item} onClick={handleSelect} />
@@ -145,7 +145,7 @@ const Dept = (props) => {
           <AnimatePresence> {listday3.length != 0 && <motion.div className='mt-20'>
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 3</h2><span>02/03/2023</span></div>
-            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
+            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
               {listday3.map(item => {
                 item.day = 3
                 return <EventContainer item={item} onClick={handleSelect} />

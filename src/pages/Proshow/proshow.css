@@ -79,7 +79,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, var(--c_red) 5%, 3%);
+  background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, 5%,black 3%);
   text-shadow: -3px -3px 0 #F8F005, 3px 3px 0 var(--c_red);
   clip-path: var(--slice-0);
 }
@@ -88,7 +88,7 @@
     background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, var(--c_red) 5%, var(--heading) 3%);
 }
 .day3_button::after{
-    background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, var(--c_red) 5%, #F0C 3%);
+    background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, var(--c_red) 5% #F0C 3%);
 }
 
 .proshow_button:hover::after {

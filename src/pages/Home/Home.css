@@ -21,7 +21,7 @@
 
 .body_bg ,body{
   background-color: #070707 !important;
-  background-image: url("./assets/svg/Dyuksha23DG.svg") !important;
+  background-image: url("../../assets/svg/Dyuksha23DG.svg") !important;
 }
 
 @media(max-width:700px) {

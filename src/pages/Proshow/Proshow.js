@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import '../proshow.css'
-import day1 from '../assets/jpeg/proshows/day1.png'
-import day2 from '../assets/jpeg/proshows/day2.png'
-import day3 from '../assets/jpeg/proshows/day3.png'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
-import ProShowModal from '../components/ProShowModal/ProShowModal'
-import day1_pot from '../assets/jpeg/proshows/day1_pot.jpg'
-import day3_pot from '../assets/jpeg/proshows/day3_pot.jpg'
+import './proshow.css'
+import day1 from '../../assets/jpeg/proshows/day1.png'
+import day2 from '../../assets/jpeg/proshows/day2.png'
+import day3 from '../../assets/jpeg/proshows/day3.png'
+import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
+import ProShowModal from '../../components/ProShowModal/ProShowModal'
+import day1_pot from '../../assets/jpeg/proshows/day1_pot.jpg'
+import day3_pot from '../../assets/jpeg/proshows/day3_pot.jpg'
 import { AnimatePresence } from 'framer-motion'
-import { useNavContext } from '../context/NavContext'
+import { useNavContext } from '../../context/NavContext'
 
 
 
@@ -89,7 +89,7 @@ const Proshow = () => {
                                 <div className='mt-4 flex flex-col space-y-3 mx-4 md:mx-0 md:-translate-x-10'>
                                     <h3 className='md:text-6xl text-4xl uppercase font-bold' >{`Day ${selected.day}`}</h3>
                                     <p className='text-2xl uppercase'>{selected.artist}</p>
-                                    <p className="text-4xl text-heading" style={{color:selected.button_bg}}>{selected.price}</p>
+                                    <p className="text-4xl text-heading" style={{ color: selected.button_bg }}>{selected.price}</p>
                                 </div>
                                 <div className='flex-1'></div>
                                 <div className='flex justify-center space-x-4 px-4 pb-4 md:pt-0 pt-8'>

@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './pages/Home/Home';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import NavProvider from './context/NavContext';
-import Events from './pages/Events';
-import Workshops from './pages/Workshops';
-import Dept from './pages/Dept';
+import Events from './pages/Event/Events';
+import Workshops from './pages/Workshops/Workshops';
+import Dept from './pages/Dept/Dept';
 import FirebaseProvider from './context/FirebaseContext';
-import Error from './Error';
-import Proshow from './pages/Proshow';
+import Error from './pages/Error/Error';
+import Proshow from './pages/Proshow/Proshow';
 const router = createBrowserRouter([
   {
     path: "/",
