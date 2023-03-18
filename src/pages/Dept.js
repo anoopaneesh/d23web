@@ -119,7 +119,7 @@ const Dept = (props) => {
           >
             <div className='flex  items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 1</h2><span>31/03/2023</span></div>
-            <div className='md:space-y-0 space-y-8 flex md:space-x-3 md:flex-row flex-col'>
+            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
               {listday1.map(item => {
                 item.day = 1
                 return <EventContainer item={item} onClick={handleSelect} />
@@ -131,7 +131,7 @@ const Dept = (props) => {
           >
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 2</h2><span>01/04/2023</span></div>
-            <div className='md:space-y-0 space-y-8 flex md:space-x-3 md:flex-row flex-col grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
+            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
               {listday2.map(item => {
                 item.day = 2
                 return <EventContainer item={item} onClick={handleSelect} />
@@ -141,7 +141,7 @@ const Dept = (props) => {
           <AnimatePresence> {listday3.length != 0 && <motion.div className='mt-20'>
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 3</h2><span>02/03/2023</span></div>
-            <div className='md:space-y-0 space-y-8 flex md:space-x-3 md:flex-row flex-col'>
+            <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{gridTemplateColumns:'repeat(3,1fr)'}}>
               {listday3.map(item => {
                 item.day = 3
                 return <EventContainer item={item} onClick={handleSelect} />
