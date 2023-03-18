@@ -30,22 +30,26 @@ const firebaseConfig = {
 const FirebaseProvider = ({ children }) => {
     let app = null
     let db = null
-    const [day1,setDay1] = useState([])
-    const [day2,setDay2] = useState([])
-    const [day3,setDay3] = useState([])
+    const [day1, setDay1] = useState([])
+    const [day2, setDay2] = useState([])
+    const [day3, setDay3] = useState([])
     useEffect(() => {
 
         if (getApps().length == 0) {
 
             app = initializeApp(firebaseConfig);
             db = getFirestore(app);
-            getData(1).then((data) => {
-                setDay1(data)
-            })
-            getData(2).then((data) => {
-                setDay2(data)
-            })
         }
+        getData(1).then((data) => {
+            setDay1(data)
+        })
+        getData(2).then((data) => {
+            setDay2(data)
+        })
+        getData(3).then((data) => {
+            setDay3(data)
+        })
+
     }, [])
 
     async function getData(day) {
@@ -61,7 +65,7 @@ const FirebaseProvider = ({ children }) => {
 
 
 
-    return <FirebaseContext.Provider value={{day1,day2,day3}}>
+    return <FirebaseContext.Provider value={{ day1, day2, day3 }}>
         {children}
     </FirebaseContext.Provider>
 }

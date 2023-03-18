@@ -3,10 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground: #cfcfcf;
-  --heading: #02D7F2;
-  --c_red: #FD0130;
+@layer base {
+  :root {
+    --foreground: rgb(207, 207, 207);
+    --heading: rgb(2, 215, 242);
+    --c_red: rgb(253, 1, 48);
+    --c_yellow: rgb(255, 238, 8);
+  }
 }
 
 @font-face {

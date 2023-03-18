@@ -1,14 +1,3 @@
 .links a:hover {
     color: var(--heading);
 }
-.mobile_shad{
-    -webkit-box-shadow: -7px 0px 46px 22px rgba(0,0,0,0.75);
-    -moz-box-shadow: -7px 0px 46px 22px rgba(0,0,0,0.75);
-    box-shadow: -7px 0px 46px 22px rgba(0,0,0,0.75);
-    
-}
-.shad{
-    -webkit-box-shadow: 0px 23px 31px 2px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 23px 31px 2px rgba(0,0,0,0.75);
-box-shadow: 0px 23px 31px 2px rgba(0,0,0,0.75);
-}

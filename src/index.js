@@ -29,16 +29,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/proshows",
-    element: <Error />
+    element: <Proshow />
   },
   {
     path: "/dept/:id",
-    element: <Error />
+    element: <Dept />
   },
   {
     path: "/test/:id",
     element: <Dept />
-  }
+  },
+  {
+    path: "/error",
+    element: <Error />
+  },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
