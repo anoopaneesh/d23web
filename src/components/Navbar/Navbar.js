@@ -5,6 +5,7 @@ import logo_text from '../../assets/svg/Dyuksha23.svg'
 import { useNavContext } from '../../context/NavContext'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { AnimatePresence, motion } from 'framer-motion'
 function Navbar() {
   const { currentPage } = useNavContext()
   const currentColor = (page) => {
@@ -38,17 +39,29 @@ function Navbar() {
     <>
       {/* <img src={logo} className="w-8 absolute left-[50%] -translate-x-1/2" /> */}
       {/* bg-[#020000bf] */}
-      <div className={`border-l border-[#fff3] bg-[#fFFFFF15] backdrop-blur-2xl pl-7 fixed h-full top-0 right-0 w-1/2 z-30 ${navOpen ? 'block' : 'hidden'} mobile_shad`}>
-        <span onClick={handleNavClose} className='text-[#777] mt-4 text-3xl absolute top-0 right-5'><i class="fa-solid fa-xmark"></i></span>
-        <div className='links-mobile links flex flex-col text-xl justify-center h-full space-y-20'>
-          <a href="/" className={`no_drag select-none ${currentColor('home')}`}>Home</a>
-          <a href="/events" className={`no_drag select-none ${currentColor('events')}`}>Events</a>
-          <a href="/workshops" className={`no_drag select-none ${currentColor('workshops')}`}>Workshops</a>
-          <a href="/proshows" className={`no_drag select-none ${currentColor('proshows')}`}>Proshows</a>
-        </div>
-      </div>
-      <nav className={`${currentScroll > 50 && 'backdrop-blur-xl bg-[#000c]'} z-10 bg-gradient-to-b from-transparent_black via-[#0005] to-transparent sticky top-0 navbar flex justify-center text-foreground text-lg uppercase space-x-20 items-center pt-10 pb-10`}>
-        {window.innerWidth < 600 ? <img src={logo_text} className="no_drag select-none w-1/3 absolute" /> : <a href="/"><img src={logo} className="no_drag select-none w-8 absolute top-10 left-20" /></a>}
+      <AnimatePresence>{navOpen &&
+        <motion.div
+          key="navbar"
+          initial={{ translateX: "100vw" }}
+          animate={{
+            translateX: "0vw", transition: {
+              duration: 0.2,
+              type: "tween",
+            }
+          }}
+          exit={{ translateX: "100vw" }}
+
+          className={`border-l border-[#fff3] bg-[#fFFFFF15] backdrop-blur-2xl pl-7 fixed h-full top-0 right-0 w-1/2 z-30 mobile_shad`}>
+          <span onClick={handleNavClose} className='text-[#777] mt-4 text-3xl absolute top-0 right-5'><i className="fa-solid fa-xmark"></i></span>
+          <div className='links-mobile links flex flex-col text-xl justify-center h-full space-y-20'>
+            <a href="/" className={`no_drag select-none ${currentColor('home')}`}>Home</a>
+            <a href="/events" className={`no_drag select-none ${currentColor('events')}`}>Events</a>
+            <a href="/workshops" className={`no_drag select-none ${currentColor('workshops')}`}>Workshops</a>
+            <a href="/proshows" className={`no_drag select-none ${currentColor('proshows')}`}>Proshows</a>
+          </div>
+        </motion.div>}</AnimatePresence>
+      <nav className={`${currentScroll > 50 && 'backdrop-blur-xl bg-[#000c] border-b border-[#aff2] shad'} z-10 bg-gradient-to-b from-transparent_black via-[#0005] to-transparent sticky top-0 navbar flex justify-center text-foreground text-lg uppercase space-x-20 items-center pt-10 pb-10 `}>
+        {window.innerWidth < 600 ? <a href="/" className='w-1/3 absolute'><img src={logo_text} className="no_drag select-none" /></a> : <a href="/"><img src={logo} className="no_drag select-none w-8 absolute top-10 left-20" /></a>}
         {window.innerWidth < 600 && <p onClick={handleNavOpen} className='absolute top-7 right-10'><i className="fa-solid fa-bars"></i></p>}
         <div className='links hidden justify-between w-2/5 font-chakra md:flex'>
 

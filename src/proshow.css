@@ -1,0 +1,188 @@
+.proshow_body {
+    background-color: #050009;
+    background-image: url("./assets/svg/Dyuksha23_bg_outline.svg");
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.proshow_inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.proshow_inner img {
+    height: 35vh;
+    transition: all ease-in-out 200ms;
+}
+
+.proshow_inner img:hover {
+    filter: brightness(130%) contrast(120%);
+    transition: all ease-in-out 200ms;
+}
+
+.proshows {
+    width: 100vw;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.container-shows {
+    display: flex;
+    width: 100%;
+}
+
+.container-shows:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: end;
+}
+
+.content-container {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.content-container p:first-child {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.proshow_button,
+.proshow_button::after {
+  width: 120px;
+  height: 40px;
+  font-size: 19px;
+  text-align: center;
+  margin: auto;
+  font-family: 'Chakra Petch';
+  font-weight: 100;
+  background: linear-gradient(45deg, transparent 5%, var(--c_red) 5%);
+  border: 0;
+  color: #fff;
+  box-shadow: 6px 0 0 var(--c_red);
+  position: relative;
+  cursor: pointer;
+
+}
+
+.proshow_button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: 'Explore';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, var(--c_red) 5%, 3%);
+  text-shadow: -3px -3px 0 #F8F005, 3px 3px 0 var(--c_red);
+  clip-path: var(--slice-0);
+}
+
+.day2_button::after{
+    background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, var(--c_red) 5%, var(--heading) 3%);
+}
+.day3_button::after{
+    background: linear-gradient(45deg, transparent 3%, var(--c_red) 3%, var(--c_red) 5%, #F0C 3%);
+}
+
+.proshow_button:hover::after {
+  animation: proshow_glitch 0.4s ease-in-out;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes proshow_glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+.proshow_button{
+    margin-top: 20px;
+}
+
+
+
+@media(max-width:700px){
+    .container-shows{
+        flex-direction: column;
+    }
+    .container-shows:nth-child(even) {
+        flex-direction: column;
+    }
+    .proshow_inner img {
+        height: auto;
+        width: 100vw;
+    }
+    .content-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 20px 30px;
+    }
+    .content-container p:first-child {
+        font-size: 25px;
+    }
+    .content-container p:nth-child(2) {
+        font-size: 16px;
+    }
+    .reverse{
+        flex-direction: row-reverse;
+    }
+}

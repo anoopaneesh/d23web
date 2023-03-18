@@ -4,6 +4,9 @@
 .text_stroke_prime{
   -webkit-text-stroke: 1.5px var(--c_red);
 }
+.about{
+  background-image: url("./assets/svg/Dyuksha23_bg_outline.svg");
+}
 
 .no_drag {
   -webkit-user-drag: none;

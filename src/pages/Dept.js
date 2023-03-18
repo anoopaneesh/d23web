@@ -6,7 +6,8 @@ import AllCutContainer from '../components/AllCutContainer/AllCutContainer';
 import { useFirebaseContext } from '../context/FirebaseContext';
 const Dept = (props) => {
   const { id } = useParams()
-  const {} = useFirebaseContext()
+  const {day1,day2,day3} = useFirebaseContext()
+  console.log(day1,day2,day3)
   return (
     <div className='min-h-screen bg-black font-chakra'>
       <Navbar />

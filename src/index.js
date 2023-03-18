@@ -9,10 +9,10 @@ import {
 import NavProvider from './context/NavContext';
 import Events from './pages/Events';
 import Workshops from './pages/Workshops';
-import Proshows from './pages/Proshows';
 import Dept from './pages/Dept';
 import FirebaseProvider from './context/FirebaseContext';
 import Error from './Error';
+import Proshow from './pages/Proshow';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/dept/:id",
     element: <Error />
+  },
+  {
+    path: "/test/:id",
+    element: <Dept />
   }
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));

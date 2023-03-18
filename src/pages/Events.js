@@ -12,13 +12,15 @@ import ece_logo from '../assets/jpeg/branches/ece.jpg'
 import eee_logo from '../assets/jpeg/branches/eee.png'
 import ice_logo from '../assets/jpeg/branches/ice.jpg'
 import mech_logo from '../assets/jpeg/branches/mech.jpg'
+import Footer from '../components/Footer/Footer'
 
 
 
 const Events = () => {
   useNavContext().changeCurrentPage('events')
   return (
-    <div className='min-h-screen pb-52 font-chakra'>
+    <>
+    <div className='min-h-screen pb-52 font-chakra bg-black about'>
       <Navbar />
       <div className='items-center md:items-start flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-3 justify-center mt-20'>
         <CurvedContainer logo={pelicula_logo} clip text="Pelicula" />
@@ -45,8 +47,10 @@ const Events = () => {
       </div>
 
 
-
+   
     </div>
+     <Footer />
+     </>
   )
 }
 

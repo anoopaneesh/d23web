@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react'
 import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, getDoc, doc, query } from 'firebase/firestore/lite';
 
 const FirebaseContext = React.createContext({})
 
@@ -30,28 +30,38 @@ const firebaseConfig = {
 const FirebaseProvider = ({ children }) => {
     let app = null
     let db = null
+    const [day1,setDay1] = useState([])
+    const [day2,setDay2] = useState([])
+    const [day3,setDay3] = useState([])
     useEffect(() => {
 
         if (getApps().length == 0) {
 
             app = initializeApp(firebaseConfig);
             db = getFirestore(app);
-            getData(1)
+            getData(1).then((data) => {
+                setDay1(data)
+            })
+            getData(2).then((data) => {
+                setDay2(data)
+            })
         }
     }, [])
 
     async function getData(day) {
         if (db == null || app == null) return
-        const querySnapshot = await getDocs(collection(db, "cse"));
-        console.log(querySnapshot)
+        const q = query(collection(db, `cse/events/day${day}`));
+        let listday = []
+        const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
+            listday.push(doc.data())
         });
+        return listday
     }
 
 
 
-    return <FirebaseContext.Provider value={{}}>
+    return <FirebaseContext.Provider value={{day1,day2,day3}}>
         {children}
     </FirebaseContext.Provider>
 }

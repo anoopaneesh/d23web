@@ -5,7 +5,6 @@
 
 :root {
   --foreground: #cfcfcf;
-  --background: rgb(32, 5, 50);
   --heading: #02D7F2;
   --c_red: #FD0130;
 }
@@ -22,6 +21,8 @@
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
 }
+
+
 
 body {
   margin: 0;
