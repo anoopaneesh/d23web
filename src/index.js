@@ -20,6 +20,11 @@ const router = createBrowserRouter([
 
   },
   {
+    path: "/home",
+    element: <App />,
+
+  },
+  {
     path: "/events",
     element: <Events />
   },
