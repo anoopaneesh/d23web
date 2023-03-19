@@ -30,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/workshops",
-    element: <Error />
+    element: <Workshops />
   },
   {
     path: "/proshows",
@@ -41,8 +41,8 @@ const router = createBrowserRouter([
     element: <Dept />
   },
   {
-    path: "/test/:id",
-    element: <Error />
+    path: "/dept-works/:id",
+    element: <Dept workshop/>
   },
   {
     path: "/error",

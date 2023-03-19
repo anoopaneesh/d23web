@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext, createContext } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore, collection, getDocs, getDoc, doc, query, where } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, query, where, orderBy } from 'firebase/firestore/lite';
 
 const FirebaseContext = React.createContext({})
 
@@ -28,36 +28,45 @@ const firebaseConfig = {
 
 
 const FirebaseProvider = ({ children }) => {
-    let app = null
-    let db = null
+    let app = useRef(null)
+    let db = useRef(null)
     const [day1, setDay1] = useState([])
     const [day2, setDay2] = useState([])
     const [day3, setDay3] = useState([])
+    const [proshows,setProshows] = useState([])
+
     useEffect(() => {
 
-        if (getApps().length == 0) {
+        if (getApps().length === 0) {
 
-            app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
+            app.current = initializeApp(firebaseConfig);
+            db.current = getFirestore(app.current);
+            getProshowData()
         }
 
 
     }, [])
-    function getDaysData(dept) {
-        getData(1, dept).then((data) => {
+    function getDaysData(dept, workshop) {
+        getData(1, dept, workshop).then((data) => {
             setDay1(data)
         })
-        getData(2, dept).then((data) => {
+        getData(2, dept, workshop).then((data) => {
             setDay2(data)
         })
-        getData(3, dept).then((data) => {
+        getData(3, dept, workshop).then((data) => {
             setDay3(data)
         })
+        
     }
 
-    async function getData(day, dept) {
-        if (db == null || app == null) return
-        const q = query(collection(db, `cse/events/day${day}`), where("dept", "==", dept));
+    async function getData(day, dept, workshop) {
+        if (db.current == null || app.current == null) return
+        let q = null
+        if (workshop) {
+            q = query(collection(db.current, `cse/events/day${day}`), where("dept", "==", dept), where('type', "==", "workshop"));
+        } else {
+            q = query(collection(db.current, `cse/events/day${day}`), where("dept", "==", dept), where('type', "!=", "workshop"));
+        }
         let listday = []
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
@@ -65,10 +74,19 @@ const FirebaseProvider = ({ children }) => {
         });
         return listday
     }
+    async function getProshowData() {
+        let listdata = []
+        const pquery = query(collection(db.current, `events`),orderBy("day"));
+        const querySnapshot = await getDocs(pquery)
+        querySnapshot.forEach((doc) => {
+            listdata.push(doc.data())
+        })
+        setProshows(listdata)
+    }
 
 
 
-    return <FirebaseContext.Provider value={{ day1, day2, day3,getDaysData }}>
+    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData,proshows }}>
         {children}
     </FirebaseContext.Provider>
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
-import { useNavigation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useFirebaseContext } from '../../context/FirebaseContext';
 import EventContainer from '../../components/EventContainer/EventContainer';
 import { useNavContext } from '../../context/NavContext';
@@ -9,14 +9,14 @@ import ProShowModal from '../../components/ProShowModal/ProShowModal';
 import Footer from '../../components/Footer/Footer';
 
 import no_image from '../../assets/jpeg/No_Image.png'
-const Dept = (props) => {
-
+const Dept = ({ workshop }) => {
+  const {changeCurrentPage} = useNavContext()
   const { id } = useParams()
   const { day1, day2, day3, getDaysData } = useFirebaseContext()
   const [listday1, setListday1] = useState([])
   const [listday2, setListday2] = useState([])
   const [listday3, setListday3] = useState([])
-  useNavContext().changeCurrentPage('events')
+
   const [modelOpen, setModalOpen] = useState(false)
   const [selected, setSelected] = useState({})
   function openModal() {
@@ -48,27 +48,31 @@ const Dept = (props) => {
     // window.location.reload()
   }
   useEffect(() => {
+    changeCurrentPage(workshop ? 'workshops' : 'events')
     document.documentElement.style.setProperty('--heading', '#FFEE08')
-    getDaysData(id)
+    getDaysData(id, workshop)
+    
     return () => { document.documentElement.style.setProperty('--heading', '#02d7f2') }
+    // eslint-disable-next-line
   }, [])
   useEffect(() => {
-    if (!day1 || day1.length == 0) return
+    if (!day1 || day1.length === 0) return
     setListday1(day1.filter(el => el.dept === id))
-
+    // eslint-disable-next-line
   }, [day1])
   useEffect(() => {
-    if (!day2 || day2.length == 0) return
+    if (!day2 || day2.length === 0) return
     setListday2(day2.filter(el => el.dept === id))
+    // eslint-disable-next-line
   }, [day2])
   useEffect(() => {
-    if (!day2 || day2.length == 0) return
+    if (!day2 || day2.length === 0) return
     setListday3(day3.filter(el => el.dept === id))
+    // eslint-disable-next-line
   }, [day3])
 
 
   function handleSelect(item) {
-    console.log(item)
     setSelected(item)
     openModal()
   }
@@ -93,11 +97,11 @@ const Dept = (props) => {
                   <p className='text-lg'>{`Contact : ${selected.contact}`}</p>
                 </div>
                 <div className='flex justify-center p-6 md:pb-6 pb-40 md:justify-end space-x-4'>
-                  <a className='text-center' onClick={closeModal}><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                  <div className='text-center' onClick={closeModal}><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
                       : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
-                  }}>Back</button></a>
+                  }}>Back</button></div>
                   <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
                       : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "black", boxShadow: "6px 0 0 var(--c_red)",
@@ -118,7 +122,7 @@ const Dept = (props) => {
             <p>{id.toUpperCase()}</p>
             <h2 className='text-transparent text_stroke text-4xl'>Corner</h2>
           </div>
-          <AnimatePresence>{listday1.length != 0 && <motion.div
+          <AnimatePresence>{listday1.length !== 0 && <motion.div
             key={day1}
           >
             <div className='flex  items-baseline space-x-8'>
@@ -126,11 +130,11 @@ const Dept = (props) => {
             <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
               {listday1.map(item => {
                 item.day = 1
-                return <EventContainer item={item} onClick={handleSelect} />
+                return <EventContainer key={item.ticket} item={item} onClick={handleSelect} />
               })}
             </div>
           </motion.div>}</AnimatePresence>
-          <AnimatePresence>{listday2.length != 0 && <motion.div className='mt-20'
+          <AnimatePresence>{listday2.length !== 0 && <motion.div className='mt-20'
             key={day1}
           >
             <div className='flex items-baseline space-x-8'>
@@ -138,17 +142,17 @@ const Dept = (props) => {
             <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
               {listday2.map(item => {
                 item.day = 2
-                return <EventContainer item={item} onClick={handleSelect} />
+                return <EventContainer key={item.ticket} item={item} onClick={handleSelect} />
               })}
             </div>
           </motion.div>}</AnimatePresence>
-          <AnimatePresence> {listday3.length != 0 && <motion.div className='mt-20'>
+          <AnimatePresence> {listday3.length !== 0 && <motion.div className='mt-20'>
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 3</h2><span>02/03/2023</span></div>
             <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
               {listday3.map(item => {
                 item.day = 3
-                return <EventContainer item={item} onClick={handleSelect} />
+                return <EventContainer key={item.ticket} item={item} onClick={handleSelect} />
               })}
             </div>
           </motion.div>}</AnimatePresence>

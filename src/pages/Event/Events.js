@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CurvedContainer from '../../components/CurvedContainer/CurvedContainer'
 import Navbar from '../../components/Navbar/Navbar'
 import { useNavContext } from '../../context/NavContext'
@@ -17,7 +17,10 @@ import Footer from '../../components/Footer/Footer'
 
 
 const Events = () => {
-  useNavContext().changeCurrentPage('events')
+  const { changeCurrentPage } = useNavContext()
+  useEffect(() => {
+    changeCurrentPage('events')
+  }, [changeCurrentPage])
   return (
     <>
       <div className='min-h-screen pb-52 font-chakra about pt-32'>
