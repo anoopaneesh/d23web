@@ -33,7 +33,7 @@ const Timer = ({ openEasterEgg }) => {
             }, 0)
     }, [])
     function handleEasterEgg(event) {
-        if(event.target.innerHTML === '23')
+        if (event.target.innerHTML === '23')
             openEasterEgg(true)
 
     }
@@ -41,10 +41,10 @@ const Timer = ({ openEasterEgg }) => {
         <div className="container_cd relative z-5">
             <div id="countdown">
                 <ul>
-                    <li><span id="days">{days}</span>days</li>
-                    <li><span id="hours">{hours}</span>Hours</li>
-                    <li><span id="minutes">{minutes}</span>Minutes</li>
-                    <li><span id="seconds" onClick={handleEasterEgg} >{seconds}</span>Seconds</li>
+                    <li className='no_drag'><span id="days">{days}</span>days</li>
+                    <li className='no_drag'><span id="hours">{hours}</span>Hours</li>
+                    <li className='no_drag'><span id="minutes">{minutes}</span>Minutes</li>
+                    <li className='no_drag'><span id="seconds" onClick={handleEasterEgg} >{seconds}</span>Seconds</li>
                 </ul>
             </div>
             <div id="content" className="emoji">
