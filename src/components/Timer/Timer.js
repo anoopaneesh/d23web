@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./style.css"
-const Timer = () => {
+const Timer = ({ openEasterEgg }) => {
     const [days, setDays] = useState(0)
     const [hours, setHours] = useState(0)
     const [minutes, setMinutes] = useState(0)
@@ -32,6 +32,11 @@ const Timer = () => {
                 //seconds
             }, 0)
     }, [])
+    function handleEasterEgg(event) {
+        if(event.target.innerHTML === '23')
+            openEasterEgg(true)
+
+    }
     return (
         <div className="container_cd relative z-5">
             <div id="countdown">
@@ -39,7 +44,7 @@ const Timer = () => {
                     <li><span id="days">{days}</span>days</li>
                     <li><span id="hours">{hours}</span>Hours</li>
                     <li><span id="minutes">{minutes}</span>Minutes</li>
-                    <li><span id="seconds">{seconds}</span>Seconds</li>
+                    <li><span id="seconds" onClick={handleEasterEgg} >{seconds}</span>Seconds</li>
                 </ul>
             </div>
             <div id="content" className="emoji">

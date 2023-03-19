@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Timer from '../Timer/Timer'
 import bg_loop from '../../assets/gif/loop.gif'
 
-const Hero = () => {
+const Hero = ({openEasterEgg}) => {
   const fonts = ["a", "Chakra Petch", "asian", "punish", "lordcorp", "digital"]
   // const randomFont = () => fonts[Math.floor(Math.random() * fonts.length)]
   const [font,] = useState(fonts[1])
@@ -29,7 +29,7 @@ const Hero = () => {
             <a href="https://www.yepdesk.com/profile/dyuksha" className='text-center ml-2' target="_blank" rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
           </div>
           <div className='mt-20 md:mt-10'>
-            <Timer />
+            <Timer openEasterEgg={openEasterEgg}/>
           </div>
         </div>
       </div>
