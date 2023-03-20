@@ -17,7 +17,11 @@ module.exports = {
         c_yellow: "#FFEE08",
       },
       fontFamily: {
-        chakra: ['Chakra Petch', 'sans-serif']
+        chakra: ['Chakra Petch', 'sans-serif'],
+        malayalam: ['Noto Sans Malayalam', 'sans-serif'],
+        hindi: ['Tiro Devanagari Hindi', 'sans-serif'],
+        tamil: ['Noto Sans Tamil', 'sans-serif']
+
       }
     },
   },

@@ -13,6 +13,7 @@ import Dept from './pages/Dept/Dept';
 import FirebaseProvider from './context/FirebaseContext';
 import Error from './pages/Error/Error';
 import Proshow from './pages/Proshow/Proshow';
+import Loading from './pages/Loading/Loading';
 const router = createBrowserRouter([
   {
     path: "/",
