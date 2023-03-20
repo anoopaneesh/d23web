@@ -69,7 +69,7 @@ const Hero = ({ openEasterEgg }) => {
         <div className='bg-[rgba(0,0,0,.5)] w-full h-full absolute top-0'></div>
 
 
-        <div className='grid place-items-center mt-[8vh] md:mt-0 h-[70%] md:h-[100%]'>
+        <div className='flex flex-col items-center space-y-[3vh] justify-center mt-[8vh] md:mt-0 h-[70%] md:h-[100%]'>
 
           <div>
             <h1
@@ -81,9 +81,9 @@ const Hero = ({ openEasterEgg }) => {
           </div>
           {window.innerWidth < 700 ? <h3 className='text-center text-foreground text-sm md:text-xl relative'>THE TECHNO-CULTURAL PROTAGONIST<br /> SHALL RISE AGAIN</h3> : <h3 className='text-center text-foreground text-sm md:text-xl relative'>THE TECHNO-CULTURAL PROTAGONIST SHALL RISE AGAIN</h3>}
           <div className='flex justify-center'>
-            <a href="/proshows" className='text-center ml-2' rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
+            <a href="/proshows" className='text-center mt-[8%]' rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
           </div>
-          <div className=''>
+          <div className='pt-2 translate-y-[3vh]'>
             <Timer openEasterEgg={openEasterEgg} />
           </div>
         </div>

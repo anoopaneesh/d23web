@@ -12,7 +12,7 @@ const Footer = () => {
     }
     return (
         <div className='relative text-white'>
-            <div onClick={handleRedirect} className='w-10 h-10 absolute translate-x-1/2 translate-y-1/2'></div>
+            {/* <div onClick={handleRedirect} className='w-10 h-10 absolute translate-x-1/2 translate-y-1/2'></div> */}
             <AnimatePresence>
                 {modelOpen && <motion.div
                     initial={{ opacity: 0 }}

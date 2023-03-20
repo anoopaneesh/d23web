@@ -95,7 +95,7 @@ const Proshow = () => {
                 </AnimatePresence>
                 <div id="proshow-b">
                     <Navbar />
-                    <div className='proshow_inner mt-8 pt-16'>
+                    <div className='proshow_inner mt-8 pt-5 md:pt-16'>
                         <div className="proshows md:space-y-0 space-y-8">
                             <div className="container-shows">
                                 <div className="image-container">
@@ -114,7 +114,7 @@ const Proshow = () => {
 
                                 </div>
                             </div>
-                            <div className="container-shows">
+                            <div className="container-shows" style={{marginTop:0}}>
                                 <div className="image-container">
                                     <img src={proshows[1].banner_url} alt="" onClick={() => openDay(2)} />
                                 </div>
@@ -130,7 +130,7 @@ const Proshow = () => {
                                     }}>Explore</button></div>
                                 </div>
                             </div>
-                            <div className="container-shows">
+                            <div className="container-shows" style={{marginTop:0}}>
                                 <div className="image-container">
                                     <img src={proshows[2].banner_url} alt="" onClick={() => openDay(3)} />
                                 </div>
