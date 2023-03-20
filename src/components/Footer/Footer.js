@@ -7,14 +7,18 @@ const Footer = () => {
     function handleModal() {
         setModelOpen((state) => !state)
     }
+    function handleRedirect() {
+        window.open('https://until-next-time.netlify.app/', '_blank');
+    }
     return (
         <div className='relative text-white'>
+            <div onClick={handleRedirect} className='w-10 h-10 absolute translate-x-1/2 translate-y-1/2'></div>
             <AnimatePresence>
-                {modelOpen && <motion.div 
-                initial={{opacity:0}}
-                animate={{opacity:1}}
-                exit={{opacity:0}}
-                className={`transition-all duration-700 ease-in-out  border  border-heading backdrop-blur-sm bg-[#0001] absolute bottom-[66px] w-56 overflow-hidden md:left-96 py-8 px-4`}>
+                {modelOpen && <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={`transition-all duration-700 ease-in-out  border  border-heading backdrop-blur-sm bg-[#0001] absolute bottom-[66px] w-56 overflow-hidden md:left-96 py-8 px-4`}>
                     <p>CONTACT</p>
                     <div className='flex flex-col mt-2'>
                         <div className='flex justify-between'>
