@@ -54,8 +54,8 @@ const Events = () => {
           </div>
         </div>
         <div className='items-center md:items-start flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-3 justify-center'>
-          <CurvedContainer logo={pelicula_logo} clip text="Pelicula" />
-          <CurvedContainer logo={game_logo} clip text="Game Gala" />
+          {/* <CurvedContainer logo={pelicula_logo} clip text="Pelicula" /> */}
+          {/* <CurvedContainer logo={game_logo} clip text="Game Gala" /> */}
           <CurvedContainer logo={informals_logo} clip text="Informals" />
         </div>
 

@@ -13,33 +13,47 @@ const Hero = ({ openEasterEgg }) => {
 
   const fonts = [
     {
-      text: "DYUKSHA '23",
+      text: "DYUKSHA",
       font: "Chakra Petch"
     },
     {
-      text: "ദ്യുക്ഷ '23",
+      text: "ദ്യുക്ഷ",
       font: "Noto Sans Malayalam"
     },
     {
-      text: "द्युक्षा '23",
+      text: "द्युक्षा",
       font: "Tiro Devanagari Hindi"
     },
     {
-      text: "த்யுக்ஷா '23",
+      text: "த்யுக்ஷா",
       font: "Noto Sans Tamil"
     }
   ]
   const [selectedFont, setSelectedFont] = useState(0)
+  const [glitchEnabled,setGlitchEnabled] = useState(false)
+  
   useEffect(() => {
     const fontInterval = setInterval(() => {
       setSelectedFont((state) => (state + 1) % fonts.length)
     }, 3000)
+    const glitchStart = setInterval(() => {
+     setGlitchEnabled(true)
+    }, 2870)
+
+    const glitchEnd = setInterval(() => {
+      setGlitchEnabled(false)
+    }, 3100)
 
 
-    
 
 
-    return () => clearInterval(fontInterval)
+
+
+    return () => {
+      clearInterval(fontInterval)
+      clearInterval(glitchStart)
+      clearInterval(glitchEnd)
+    }
 
 
 
@@ -56,14 +70,19 @@ const Hero = ({ openEasterEgg }) => {
 
 
         <div className='mt-[30%] md:mt-20'>
-         
-          <h1
-            style={{ fontFamily: fonts[selectedFont].font }}
-            className="text-center glitch no_drag text-5xl md:text-8xl font-bold italic  text-white" data-text={fonts[selectedFont].text}>{fonts[selectedFont].text}</h1>
+
+          <div>
+            <h1
+              style={{ fontFamily: fonts[selectedFont].font }}
+              className={`text-center glitch no_drag text-5xl md:text-8xl font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text={fonts[selectedFont].text}>{fonts[selectedFont].text}</h1>
+              <h1
+              style={{ fontFamily: fonts[0].font }}
+              className={`text-center glitch no_drag text-5xl md:text-8xl font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text="2023">2023</h1>
+          </div>
           {window.innerWidth < 700 ? <h3 className='text-center text-foreground text-sm md:text-xl mt-4 md:mt-10 relative'>THE TECHNO-CULTURAL PROTAGONIST<br /> SHALL RISE AGAIN</h3> : <h3 className='text-center text-foreground text-sm md:text-xl mt-4 md:mt-10 relative'>THE TECHNO-CULTURAL PROTAGONIST SHALL RISE AGAIN</h3>}
           <div className='h-20'></div>
-          <div className='flex justify-center mt-5 md:-mt-10'>
-            <a href="https://www.yepdesk.com/profile/dyuksha" className='text-center ml-2' target="_blank" rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
+          <div className='flex justify-center md:-mt-10'>
+            <a href="/proshows" className='text-center ml-2' rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
           </div>
           <div className='mt-20 md:mt-10'>
             <Timer openEasterEgg={openEasterEgg} />

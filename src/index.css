@@ -13,6 +13,10 @@
     --heading: #02d7f2;
     --c_red: rgb(253, 1, 48);
     --c_yellow: rgb(255, 238, 8);
+    --after_text_shadow : 
+
+    /* text-shadow: -5px 0 var(--heading); */
+  /* animation: glitch-anim-2 0.3s infinite ease-in-out alternate-reverse; */
   }
 }
 
