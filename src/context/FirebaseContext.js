@@ -34,6 +34,8 @@ const FirebaseProvider = ({ children }) => {
     const [day2, setDay2] = useState([])
     const [day3, setDay3] = useState([])
 
+    const [generalEvents,setGeneralEvents] = useState({day1:[],day2:[],day3:[]})
+
 
     const [listday1, setListday1] = useState([])
     const [listday2, setListday2] = useState([])
@@ -55,9 +57,12 @@ const FirebaseProvider = ({ children }) => {
                 setListday1(data.day1)
                 setListday2(data.day2)
                 setListday3(data.day3)
-                console.log(data)
+            
             }).catch(err => {
                 console.log('Workshop error', err)
+            })
+            getGeneralEvents().then(data => {
+                setGeneralEvents(data)
             })
         }
 
@@ -74,6 +79,36 @@ const FirebaseProvider = ({ children }) => {
             setDay3(data)
         })
 
+    }
+
+    async function getGeneralEvents() {
+        return new Promise(async(resolve, reject) => {
+            if (db.current == null || app.current == null) {
+                reject()
+            } else {
+                const data = {
+                    day1: [],
+                    day2: [],
+                    day3: []
+                }
+                let q1 = query(collection(db.current, `cse/events/day1`), where('type', "==", "general_event"));
+                let q2 = query(collection(db.current, `cse/events/day2`), where('type', "==", "general_event"));
+                let q3 = query(collection(db.current, `cse/events/day3`), where('type', "==", "general_event"));
+                const qs1 = await getDocs(q1);
+                const qs2 = await getDocs(q2);
+                const qs3 = await getDocs(q3);
+                qs1.forEach((doc) => {
+                    data.day1.push(doc.data())
+                });
+                qs2.forEach((doc) => {
+                    data.day2.push(doc.data())
+                });
+                qs3.forEach((doc) => {
+                    data.day3.push(doc.data())
+                });
+                resolve(data)
+            }
+        })
     }
 
     async function getAllWorkshops() {
@@ -136,7 +171,7 @@ const FirebaseProvider = ({ children }) => {
 
 
 
-    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData, proshows, getAllWorkshops, listday1, listday2, listday3 }}>
+    return <FirebaseContext.Provider value={{ generalEvents, day1, day2, day3, getDaysData, getProshowData, proshows, getAllWorkshops, listday1, listday2, listday3 }}>
         {children}
     </FirebaseContext.Provider>
 }
