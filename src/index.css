@@ -11,8 +11,8 @@
   :root {
     --foreground: rgb(207, 207, 207);
     --heading: #02d7f2;
-    --c_red: rgb(253, 1, 48);
-    --c_yellow: rgb(255, 238, 8);
+    --c_red: #fd0130;
+    --c_yellow: #ffee08;
     --after_text_shadow : 
 
     /* text-shadow: -5px 0 var(--heading); */

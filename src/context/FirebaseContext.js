@@ -33,7 +33,7 @@ const FirebaseProvider = ({ children }) => {
     const [day1, setDay1] = useState([])
     const [day2, setDay2] = useState([])
     const [day3, setDay3] = useState([])
-    const [proshows,setProshows] = useState([])
+    const [proshows, setProshows] = useState([])
 
     useEffect(() => {
 
@@ -56,14 +56,32 @@ const FirebaseProvider = ({ children }) => {
         getData(3, dept, workshop).then((data) => {
             setDay3(data)
         })
-        
+
+    }
+
+    async function getWorkshops(day) {
+        if (db.current == null || app.current == null) return
+        let q = query(collection(db.current, `cse/events/day${day}`), where('type', "==", "workshop"));
+        let listday = []
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            listday.push(doc.data())
+        });
+        return listday
+    }
+
+    async function getAllWorkshops(){
+        getWorkshops(1).then(data => setDay1(data))
+        getWorkshops(2).then(data => setDay2(data))
+        getWorkshops(3).then(data => setDay3(data))
     }
 
     async function getData(day, dept, workshop) {
         if (db.current == null || app.current == null) return
         let q = null
         if (workshop) {
-            q = query(collection(db.current, `cse/events/day${day}`), where("dept", "==", dept), where('type', "==", "workshop"));
+            q = query(collection(db.current, `cse/events/day${day}`), where('type', "==", "workshop"));
+
         } else {
             q = query(collection(db.current, `cse/events/day${day}`), where("dept", "==", dept), where('type', "!=", "workshop"));
         }
@@ -72,11 +90,12 @@ const FirebaseProvider = ({ children }) => {
         querySnapshot.forEach((doc) => {
             listday.push(doc.data())
         });
+        console.log(listday)
         return listday
     }
     async function getProshowData() {
         let listdata = []
-        const pquery = query(collection(db.current, `events`),orderBy("day"));
+        const pquery = query(collection(db.current, `events`), orderBy("day"));
         const querySnapshot = await getDocs(pquery)
         querySnapshot.forEach((doc) => {
             listdata.push(doc.data())
@@ -86,7 +105,7 @@ const FirebaseProvider = ({ children }) => {
 
 
 
-    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData,proshows }}>
+    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData, proshows, getAllWorkshops }}>
         {children}
     </FirebaseContext.Provider>
 }

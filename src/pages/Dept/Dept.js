@@ -10,9 +10,9 @@ import Footer from '../../components/Footer/Footer';
 
 import no_image from '../../assets/jpeg/No_Image.png'
 const Dept = ({ workshop }) => {
-  const {changeCurrentPage} = useNavContext()
+  const { changeCurrentPage } = useNavContext()
   const { id } = useParams()
-  const { day1, day2, day3, getDaysData } = useFirebaseContext()
+  const { day1, day2, day3, getDaysData, getAllWorkshops } = useFirebaseContext()
   const [listday1, setListday1] = useState([])
   const [listday2, setListday2] = useState([])
   const [listday3, setListday3] = useState([])
@@ -49,25 +49,31 @@ const Dept = ({ workshop }) => {
   }
   useEffect(() => {
     changeCurrentPage(workshop ? 'workshops' : 'events')
-    document.documentElement.style.setProperty('--heading', '#FFEE08')
-    getDaysData(id, workshop)
-    
+
+    if (workshop) {
+      getAllWorkshops()
+      document.documentElement.style.setProperty('--heading', '#FD0130')
+    } else {
+      getDaysData(id)
+      document.documentElement.style.setProperty('--heading', '#FFEE08')
+    }
+
     return () => { document.documentElement.style.setProperty('--heading', '#02d7f2') }
     // eslint-disable-next-line
   }, [])
   useEffect(() => {
     if (!day1 || day1.length === 0) return
-    setListday1(day1.filter(el => el.dept === id))
+    setListday1(workshop ? day1 : day1.filter(el => el.dept === id))
     // eslint-disable-next-line
   }, [day1])
   useEffect(() => {
     if (!day2 || day2.length === 0) return
-    setListday2(day2.filter(el => el.dept === id))
+    setListday2(workshop ? day2 : day2.filter(el => el.dept === id))
     // eslint-disable-next-line
   }, [day2])
   useEffect(() => {
     if (!day2 || day2.length === 0) return
-    setListday3(day3.filter(el => el.dept === id))
+    setListday3(workshop ? day3 : day3.filter(el => el.dept === id))
     // eslint-disable-next-line
   }, [day3])
 
@@ -117,11 +123,11 @@ const Dept = ({ workshop }) => {
       <div id="dept-b">
         <Navbar />
         <div className='w-2/3 m-auto pb-10 pt-44'>
-          <div className='text-6xl md:text-7xl text-heading mb-8 font-bold flex justify-start items-baseline'>
+          {!workshop && <div className='text-6xl md:text-7xl text-heading mb-8 font-bold flex justify-start items-baseline'>
             {/* <div className='w-[1px] h-16 -translate-x-10 bg-heading'></div> */}
             <p>{id.toUpperCase()}</p>
             <h2 className='text-transparent text_stroke text-4xl'>Corner</h2>
-          </div>
+          </div>}
           <AnimatePresence>{listday1.length !== 0 && <motion.div
             key={day1}
           >

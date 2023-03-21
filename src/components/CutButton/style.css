@@ -1,0 +1,33 @@
+.cut_button {
+    background: var(--heading);
+    display: grid;
+    place-items: center;
+}
+
+.cut_button:hover {
+    background-color: white;
+}
+
+.cut_button .inner {
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    background: black;
+    overflow: hidden;
+}
+
+.cut_button .inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.3s ease-in-out;
+}
+
+.cut_button .inner img:hover {
+    scale: 1.02;
+    cursor: pointer;
+}
+
+.cut_button .clip_path {
+    -webkit-clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
+    clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
+}
