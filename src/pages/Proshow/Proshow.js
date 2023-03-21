@@ -75,7 +75,7 @@ const Proshow = () => {
                                         <p className="text-4xl text-heading" style={{ color: selected.button_bg }}>₹ {selected.price}</p>
                                     </div>
                                     <div className='flex-1'>
-                                        <p className='max-w-md'>{selected.about}
+                                        <p className='-translate-x-10 mt-8 h-[75%] max-w-md'>{selected.about}
                                         </p>
                                     </div>
                                     <div className='flex justify-center space-x-4 px-4 pb-4 md:pt-0 pt-8'>
@@ -102,7 +102,7 @@ const Proshow = () => {
                         <div className="proshows md:space-y-0 space-y-8">
                             <div className="container-shows">
                                 <div className="image-container">
-                                    <img src={proshows[0].banner_url} alt="" onClick={() => openDay(1)} />
+                                    <img className='object-scale-down' src={proshows[0].banner_url} alt="" onClick={() => openDay(1)} />
                                 </div>
                                 <div className="content-container">
                                     <div className="details">
@@ -119,7 +119,7 @@ const Proshow = () => {
                             </div>
                             <div className="container-shows" style={{ marginTop: 0 }}>
                                 <div className="image-container">
-                                    <img src={proshows[1].banner_url} alt="" onClick={() => {
+                                    <img className='object-scale-down' src={proshows[1].banner_url} alt="" onClick={() => {
                                         // openDay(2)
                                     }} />
                                 </div>
@@ -130,16 +130,16 @@ const Proshow = () => {
                                     </div>
                                     <div className='text-center' onClick={() => {
                                         // openDay(2)
-                                    }}><button className=' bg-[#36fdfd] proshow_button day2_button font-chakra' type="button" style={{
+                                    }}><button className='translate-x-6 bg-[#36fdfd] proshow_button day2_button font-chakra' type="button" style={{
                                         background
-                                            : " linear-gradient(45deg, transparent 5%, #0055FC 5%)", color: "white", boxShadow: "6px 0 0 var(--c_red)",
+                                            : " linear-gradient(45deg, transparent 5%, #02d7f2 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
                                     }}>Explore</button></div>
                                 </div>
                             </div>
                             <div className="container-shows" style={{ marginTop: 0 }}>
                                 <div className="image-container">
-                                    <img src={proshows[2].banner_url} alt="" onClick={() => openDay(3)} />
+                                    <img className='object-scale-down' src={proshows[2].banner_url} alt="" onClick={() => openDay(3)} />
                                 </div>
                                 <div className="content-container">
                                     <div className="details">
