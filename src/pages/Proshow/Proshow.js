@@ -75,7 +75,7 @@ const Proshow = () => {
                                         {/* <p className="text-4xl text-heading" style={{ color: selected.button_bg }}>₹ {selected.price}</p> */}
                                     </div>
                                     <div className='flex-1'>
-                                        <p className='-translate-x-10 mt-8 h-[75%] max-w-md'>{selected.about}
+                                        <p className='md:-translate-x-10 mt-8 h-[75%] max-w-md'>{selected.about}
                                         </p>
                                     </div>
                                     <div className='flex justify-end space-x-4 px-4 pb-4 md:pt-0 pt-8'>
