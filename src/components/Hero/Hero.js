@@ -38,7 +38,23 @@ const Hero = ({ openEasterEgg }) => {
     return p
   }
   useEffect(() => {
-   
+    const fontInterval = setInterval(() => {
+      setSelectedFont((state) => (state + 1) % fonts.length)
+    }, 3000)
+    const glitchStart = setInterval(() => {
+      setGlitchEnabled(true)
+    }, 2870)
+
+    const glitchEnd = setInterval(() => {
+      setGlitchEnabled(false)
+    }, 3100)
+
+
+    return () => {
+      clearInterval(fontInterval)
+      clearInterval(glitchStart)
+      clearInterval(glitchEnd)
+    }
   }, [])
   return (
     <>
