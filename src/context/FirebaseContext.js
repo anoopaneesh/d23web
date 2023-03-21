@@ -33,6 +33,15 @@ const FirebaseProvider = ({ children }) => {
     const [day1, setDay1] = useState([])
     const [day2, setDay2] = useState([])
     const [day3, setDay3] = useState([])
+
+
+    const [listday1, setListday1] = useState([])
+    const [listday2, setListday2] = useState([])
+    const [listday3, setListday3] = useState([])
+
+
+
+
     const [proshows, setProshows] = useState([])
 
     useEffect(() => {
@@ -42,6 +51,14 @@ const FirebaseProvider = ({ children }) => {
             app.current = initializeApp(firebaseConfig);
             db.current = getFirestore(app.current);
             getProshowData()
+            getAllWorkshops().then((data) => {
+                setListday1(data.day1)
+                setListday2(data.day2)
+                setListday3(data.day3)
+                console.log(data)
+            }).catch(err => {
+                console.log('Workshop error', err)
+            })
         }
 
 
@@ -59,26 +76,15 @@ const FirebaseProvider = ({ children }) => {
 
     }
 
-    async function getWorkshops(day) {
-        if (db.current == null || app.current == null) return
-        let q = query(collection(db.current, `cse/events/day${day}`), where('type', "==", "workshop"));
-        let listday = []
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-            listday.push(doc.data())
-        });
-        return listday
-    }
-
     async function getAllWorkshops() {
         return new Promise(async (resolve, reject) => {
             if (db.current == null || app.current == null) {
                 reject()
             } else {
                 const data = {
-                    day1:[],
-                    day2:[],
-                    day3:[]
+                    day1: [],
+                    day2: [],
+                    day3: []
                 }
                 let q1 = query(collection(db.current, `cse/events/day1`), where('type', "==", "workshop"));
                 let q2 = query(collection(db.current, `cse/events/day2`), where('type', "==", "workshop"));
@@ -130,7 +136,7 @@ const FirebaseProvider = ({ children }) => {
 
 
 
-    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData, proshows, getAllWorkshops }}>
+    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData, proshows, getAllWorkshops, listday1, listday2, listday3 }}>
         {children}
     </FirebaseContext.Provider>
 }

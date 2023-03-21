@@ -11,12 +11,9 @@ import Footer from '../../components/Footer/Footer';
 import no_image from '../../assets/jpeg/No_Image.png'
 const Workshops = () => {
   const { changeCurrentPage } = useNavContext()
-  const { getAllWorkshops } = useFirebaseContext()
+  const { listday1,listday2,listday3} = useFirebaseContext()
 
   const [modelOpen, setModalOpen] = useState(false)
-  const [listday1, setListday1] = useState([])
-  const [listday2, setListday2] = useState([])
-  const [listday3, setListday3] = useState([])
   const [selected, setSelected] = useState({})
   function openModal() {
     if (window.innerWidth < 700) {
@@ -38,13 +35,7 @@ const Workshops = () => {
   }
   useEffect(() => {
     changeCurrentPage('workshops')
-    getAllWorkshops().then((data)=>{
-      setListday1(data.day1)
-      setListday2(data.day2)
-      setListday3(data.day3)
-    }).catch(err => {
-      console.log('Workshop error',err)
-    })
+
     document.documentElement.style.setProperty('--heading', '#FD0130')
 
 
