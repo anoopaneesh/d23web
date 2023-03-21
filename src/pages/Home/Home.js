@@ -43,15 +43,23 @@ function Home() {
         animate={
           { opacity: 1 }
         }
-        className="bg-black font-chakra">
+        className="font-chakra">
         <Navbar />
         <Hero openEasterEgg={setConfettiVisible} />
         <About />
         <div className='w-full md:w-2/3 m-auto'>
           <div className='flex justify-start space-x-5 mb-16 -translate-x-[6vh]'>
-            <img className='h-[50vh] -translate-y-[6vh] no_drag pointer-events-none' src={qr} alt="" />
-            <h1 className='text-heading text-xl mb-8 uppercase text-start' >Download the app <br />from <span className='font-bold text-3xl'>playstore</span></h1>
-            {/* <CutButton>Playstore</CutButton> */}
+            <img className='h-[50vh] -translate-y-[6vh] no_drag pointer-events-none mix-blend-lighten bg-blend-lighten' src={qr} alt="" />
+            <div>
+              <h1 className='text-heading text-xl mb-8 uppercase text-start'>Download the app <br />from <span className='font-bold text-3xl'>playstore</span></h1>
+              <div className=''>
+                <a href="https://play.google.com/store/apps/details?id=com.dyuksha.d23" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                  background
+                    : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 0 'var(--c_red)`,
+
+                }}>Download</button></a>
+              </div>
+            </div>
           </div>
         </div>
         <Footer />

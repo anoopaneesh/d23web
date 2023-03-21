@@ -28,6 +28,6 @@
 }
 
 .cut_button .clip_path {
-    -webkit-clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
-    clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
+    -webkit-clip-path: polygon(100% 10%, 95% 0, 0% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 10%, 95% 0, 0% 0%, 0% 100%, 100% 100%);
 }
