@@ -33,6 +33,15 @@ const FirebaseProvider = ({ children }) => {
     const [day1, setDay1] = useState([])
     const [day2, setDay2] = useState([])
     const [day3, setDay3] = useState([])
+
+
+    const [listday1, setListday1] = useState([])
+    const [listday2, setListday2] = useState([])
+    const [listday3, setListday3] = useState([])
+
+
+
+
     const [proshows, setProshows] = useState([])
 
     useEffect(() => {
@@ -42,6 +51,14 @@ const FirebaseProvider = ({ children }) => {
             app.current = initializeApp(firebaseConfig);
             db.current = getFirestore(app.current);
             getProshowData()
+            getAllWorkshops().then((data) => {
+                setListday1(data.day1)
+                setListday2(data.day2)
+                setListday3(data.day3)
+                console.log(data)
+            }).catch(err => {
+                console.log('Workshop error', err)
+            })
         }
 
 
@@ -59,21 +76,35 @@ const FirebaseProvider = ({ children }) => {
 
     }
 
-    async function getWorkshops(day) {
-        if (db.current == null || app.current == null) return
-        let q = query(collection(db.current, `cse/events/day${day}`), where('type', "==", "workshop"));
-        let listday = []
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-            listday.push(doc.data())
-        });
-        return listday
-    }
+    async function getAllWorkshops() {
+        return new Promise(async (resolve, reject) => {
+            if (db.current == null || app.current == null) {
+                reject()
+            } else {
+                const data = {
+                    day1: [],
+                    day2: [],
+                    day3: []
+                }
+                let q1 = query(collection(db.current, `cse/events/day1`), where('type', "==", "workshop"));
+                let q2 = query(collection(db.current, `cse/events/day2`), where('type', "==", "workshop"));
+                let q3 = query(collection(db.current, `cse/events/day3`), where('type', "==", "workshop"));
+                const qs1 = await getDocs(q1);
+                const qs2 = await getDocs(q2);
+                const qs3 = await getDocs(q3);
+                qs1.forEach((doc) => {
+                    data.day1.push(doc.data())
+                });
+                qs2.forEach((doc) => {
+                    data.day2.push(doc.data())
+                });
+                qs3.forEach((doc) => {
+                    data.day3.push(doc.data())
+                });
+                resolve(data)
+            }
 
-    async function getAllWorkshops(){
-        getWorkshops(1).then(data => setDay1(data))
-        getWorkshops(2).then(data => setDay2(data))
-        getWorkshops(3).then(data => setDay3(data))
+        })
     }
 
     async function getData(day, dept, workshop) {
@@ -105,7 +136,7 @@ const FirebaseProvider = ({ children }) => {
 
 
 
-    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData, proshows, getAllWorkshops }}>
+    return <FirebaseContext.Provider value={{ day1, day2, day3, getDaysData, getProshowData, proshows, getAllWorkshops, listday1, listday2, listday3 }}>
         {children}
     </FirebaseContext.Provider>
 }
