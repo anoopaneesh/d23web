@@ -47,7 +47,7 @@ function Home() {
         <Navbar />
         <Hero openEasterEgg={setConfettiVisible} />
         <About />
-        <div className='w-full md:w-2/3 m-auto'>
+        <div className='w-full md:w-2/3 m-auto hidden md:block'>
           <div className='flex justify-start space-x-5 mb-16 -translate-x-[6vh]'>
             <img className='h-[50vh] -translate-y-[6vh] no_drag pointer-events-none' src={qr} alt="" />
             <h1 className='text-heading text-xl mb-8 uppercase text-start' >Download the app <br />from <span className='font-bold text-3xl'>playstore</span></h1>

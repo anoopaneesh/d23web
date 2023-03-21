@@ -78,7 +78,7 @@ const Proshow = () => {
                                         <p className='-translate-x-10 mt-8 h-[75%] max-w-md'>{selected.about}
                                         </p>
                                     </div>
-                                    <div className='flex justify-center space-x-4 px-4 pb-4 md:pt-0 pt-8'>
+                                    <div className='flex justify-end space-x-4 px-4 pb-4 md:pt-0 pt-8'>
                                         <div className='text-center' onClick={closeModal}><button className='bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                             background
                                                 : " linear-gradient(45deg, transparent 5%, var(--c_red) 5%)", color: "white", boxShadow: "6px 0 0 var(--heading)",
