@@ -30,36 +30,16 @@ const Hero = ({ openEasterEgg }) => {
     }
   ]
   const [selectedFont, setSelectedFont] = useState(0)
-  const [glitchEnabled,setGlitchEnabled] = useState(false)
-  
+  const [glitchEnabled, setGlitchEnabled] = useState(false)
+  function getPreciseSeconds() {
+    const m = new Date().getMilliseconds()
+    const s = new Date().getSeconds()
+    const p = s + (m / 1000)
+    return p
+  }
   useEffect(() => {
-    const fontInterval = setInterval(() => {
-      setSelectedFont((state) => (state + 1) % fonts.length)
-    }, 3000)
-    const glitchStart = setInterval(() => {
-     setGlitchEnabled(true)
-    }, 2870)
-
-    const glitchEnd = setInterval(() => {
-      setGlitchEnabled(false)
-    }, 3100)
-
-
-
-
-
-
-    return () => {
-      clearInterval(fontInterval)
-      clearInterval(glitchStart)
-      clearInterval(glitchEnd)
-    }
-
-
-
-
+   
   }, [])
-  console.log(fonts[selectedFont])
   return (
     <>
       {/* <video src={intro} muted autoPlay loop className='absolute top-0 -z-0 w-full h-full object-cover' /> */}
@@ -75,7 +55,7 @@ const Hero = ({ openEasterEgg }) => {
             <h1
               style={{ fontFamily: fonts[selectedFont].font }}
               className={`text-center glitch no_drag text-5xl md:text-8xl font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text={fonts[selectedFont].text}>{fonts[selectedFont].text}</h1>
-              <h1
+            <h1
               style={{ fontFamily: fonts[0].font }}
               className={`text-center glitch no_drag text-5xl md:text-8xl font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text="2023">2023</h1>
           </div>
