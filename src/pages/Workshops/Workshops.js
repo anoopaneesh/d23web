@@ -38,7 +38,13 @@ const Workshops = () => {
   }
   useEffect(() => {
     changeCurrentPage('workshops')
-    getAllWorkshops()
+    getAllWorkshops().then((data)=>{
+      setListday1(data.day1)
+      setListday2(data.day2)
+      setListday3(data.day3)
+    }).catch(err => {
+      console.log('Workshop error',err)
+    })
     document.documentElement.style.setProperty('--heading', '#FD0130')
 
 

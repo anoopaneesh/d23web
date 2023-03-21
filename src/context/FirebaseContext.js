@@ -70,10 +70,35 @@ const FirebaseProvider = ({ children }) => {
         return listday
     }
 
-    async function getAllWorkshops(){
-        getWorkshops(1).then(data => setDay1(data))
-        getWorkshops(2).then(data => setDay2(data))
-        getWorkshops(3).then(data => setDay3(data))
+    async function getAllWorkshops() {
+        return new Promise(async (resolve, reject) => {
+            if (db.current == null || app.current == null) {
+                reject()
+            } else {
+                const data = {
+                    day1:[],
+                    day2:[],
+                    day3:[]
+                }
+                let q1 = query(collection(db.current, `cse/events/day1`), where('type', "==", "workshop"));
+                let q2 = query(collection(db.current, `cse/events/day2`), where('type', "==", "workshop"));
+                let q3 = query(collection(db.current, `cse/events/day3`), where('type', "==", "workshop"));
+                const qs1 = await getDocs(q1);
+                const qs2 = await getDocs(q2);
+                const qs3 = await getDocs(q3);
+                qs1.forEach((doc) => {
+                    data.day1.push(doc.data())
+                });
+                qs2.forEach((doc) => {
+                    data.day2.push(doc.data())
+                });
+                qs3.forEach((doc) => {
+                    data.day3.push(doc.data())
+                });
+                resolve(data)
+            }
+
+        })
     }
 
     async function getData(day, dept, workshop) {
