@@ -74,7 +74,10 @@ const Proshow = () => {
                                         <p className='text-2xl uppercase'>{selected.artist}</p>
                                         <p className="text-4xl text-heading" style={{ color: selected.button_bg }}>₹ {selected.price}</p>
                                     </div>
-                                    <div className='flex-1'></div>
+                                    <div className='flex-1'>
+                                        <p className='max-w-md'>{selected.about}
+                                        </p>
+                                    </div>
                                     <div className='flex justify-center space-x-4 px-4 pb-4 md:pt-0 pt-8'>
                                         <div className='text-center' onClick={closeModal}><button className='bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                             background
@@ -114,23 +117,27 @@ const Proshow = () => {
 
                                 </div>
                             </div>
-                            <div className="container-shows" style={{marginTop:0}}>
+                            <div className="container-shows" style={{ marginTop: 0 }}>
                                 <div className="image-container">
-                                    <img src={proshows[1].banner_url} alt="" onClick={() => openDay(2)} />
+                                    <img src={proshows[1].banner_url} alt="" onClick={() => {
+                                        // openDay(2)
+                                    }} />
                                 </div>
                                 <div className="content-container reverse">
                                     <div className="details">
                                         <p>DAY 2</p>
                                         <p>{proshows[1].artist.toUpperCase()}</p>
                                     </div>
-                                    <div className='text-center' onClick={() => openDay(2)}><button className=' bg-[#36fdfd] proshow_button day2_button font-chakra' type="button" style={{
+                                    <div className='text-center' onClick={() => {
+                                        // openDay(2)
+                                    }}><button className=' bg-[#36fdfd] proshow_button day2_button font-chakra' type="button" style={{
                                         background
                                             : " linear-gradient(45deg, transparent 5%, #0055FC 5%)", color: "white", boxShadow: "6px 0 0 var(--c_red)",
 
                                     }}>Explore</button></div>
                                 </div>
                             </div>
-                            <div className="container-shows" style={{marginTop:0}}>
+                            <div className="container-shows" style={{ marginTop: 0 }}>
                                 <div className="image-container">
                                     <img src={proshows[2].banner_url} alt="" onClick={() => openDay(3)} />
                                 </div>
