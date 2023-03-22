@@ -47,11 +47,19 @@ function Home() {
         <Navbar />
         <Hero openEasterEgg={setConfettiVisible} />
         <About />
-        <div className='w-full md:w-2/3 m-auto hidden md:block'>
-          <div className='flex justify-start space-x-5 mb-16 -translate-x-[6vh]'>
-            <img className='h-[50vh] -translate-y-[6vh] no_drag pointer-events-none' src={qr} alt="" />
-            <h1 className='text-heading text-xl mb-8 uppercase text-start' >Download the app <br />from <span className='font-bold text-3xl'>playstore</span></h1>
-            {/* <CutButton>Playstore</CutButton> */}
+        <div className='w-2/3 m-auto'>
+          <div className='flex md:flex-row flex-col justify-start space-x-5 mb-16 -translate-x-[6vh]'>
+            <img className='w-[500px] object-contain md:w-auto md:h-[50vh] -translate-y-[6vh] no_drag pointer-events-none' src={qr} alt="" />
+            <div>
+              <h1 className='text-heading text-xl mb-8 uppercase text-start md:translate-y-0 -translate-y-16 md:translate-x-0 translate-x-[14px]'>Download the app <br />from <span className='font-bold text-3xl'>playstore</span></h1>
+              <div className='md:translate-y-0 -translate-y-24 md:translate-x-0 translate-x-[14px]'>
+                <a href="https://play.google.com/store/apps/details?id=com.dyuksha.d23" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                  background
+                    : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 0 'var(--c_red)`,
+
+                }}>Download</button></a>
+              </div>
+            </div>
           </div>
         </div>
         <Footer />
