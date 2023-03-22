@@ -11,7 +11,7 @@ import Footer from '../../components/Footer/Footer';
 import no_image from '../../assets/jpeg/No_Image.png'
 const Workshops = () => {
   const { changeCurrentPage } = useNavContext()
-  const { listday1,listday2,listday3} = useFirebaseContext()
+  const { listday1, listday2, listday3 } = useFirebaseContext()
 
   const [modelOpen, setModalOpen] = useState(false)
   const [selected, setSelected] = useState({})
@@ -75,7 +75,7 @@ const Workshops = () => {
                   }}>Back</button></div>
                   <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
-                      : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "black", boxShadow: "6px 0 0 var(--c_red)",
+                      : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "white", boxShadow: "6px 0 0 white",
 
                   }}>Register</button></a>
                 </div>
