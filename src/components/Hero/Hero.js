@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Timer from '../Timer/Timer'
-import bg_loop from '../../assets/gif/loop.gif'
+import bg_loop from '../../assets/videos/BG1.mp4'
 import './style.css'
 
 const Hero = ({ openEasterEgg }) => {
@@ -61,8 +61,8 @@ const Hero = ({ openEasterEgg }) => {
       {/* <video src={intro} muted autoPlay loop className='absolute top-0 -z-0 w-full h-full object-cover' /> */}
 
       <div className='relative top-0 overflow-hidden z-2 h-screen pt-8 md:pt-32'>
-        <img src={bg_loop} className="absolute top-0 w-full h-full object-cover object-left-top" alt="" />
-        <div className='bg-[rgba(0,0,0,.5)] w-full h-full absolute top-0'></div>
+        <video src={bg_loop} autoplay="autoplay" muted loop="loop" className="absolute top-0 w-full h-full object-cover object-left-top" alt="" />
+        <div className='bg-[rgba(0,0,0,.2)] w-full h-full absolute top-0'></div>
 
 
         <div className='flex flex-col items-center space-y-[3vh] justify-center mt-[8vh] md:mt-0 h-[70%] md:h-[100%]'>
