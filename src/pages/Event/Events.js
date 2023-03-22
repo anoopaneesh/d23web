@@ -43,7 +43,7 @@ const Events = () => {
         <Navbar />
 
         <div className="h-10 w-full"></div>
-        <div className='w-full flex justify-center mb-[15px]'>
+        <div className='w-full flex justify-center mb-[32px]'>
           <div className='text-4xl md:text-7xl text-heading mb-8 font-bold flex flex-col md:flex-row md:justify-start md:items-center justify-center items-center'>
             <h2 className='md:-translate-x-5'>Department</h2>
             <h3 className='text-transparent text_stroke'>Events</h3>
@@ -69,7 +69,7 @@ const Events = () => {
             <h3 className='text-transparent text_stroke'>Events</h3>
           </div>
         </div>
-        <div className='items-center md:items-start flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-3 justify-center'>
+        <div className='flex gap-4 mx-24 mt-[32px]'>
           <AnimatePresence>
             {modelOpen && <ProShowModal handleClose={closeModal}>
               <div className='shad grid place-items-center max-h-[100vh] bg-[#000a] backdrop-blur-xl overflow-scroll md:overflow-hidden'>
@@ -106,10 +106,10 @@ const Events = () => {
               </div>
             </ProShowModal>}
           </AnimatePresence>
-          <CurvedContainer logo={informals_logo} clip text />
           {generalEvents.day1.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
           {generalEvents.day2.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
           {generalEvents.day3.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
+          <CurvedContainer logo={informals_logo} clip text />
         </div>
 
       </div>
