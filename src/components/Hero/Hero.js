@@ -77,7 +77,7 @@ const Hero = ({ openEasterEgg }) => {
           </div>
           {window.innerWidth < 700 ? <h3 className='text-center text-foreground text-sm md:text-xl relative'>THE TECHNO-CULTURAL PROTAGONIST<br /> SHALL RISE AGAIN</h3> : <h3 className='text-center text-foreground text-sm md:text-xl relative'>THE TECHNO-CULTURAL PROTAGONIST SHALL RISE AGAIN</h3>}
           <div className='flex justify-center'>
-            <a href="/proshows" className='text-center mt-[8%]' rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
+            <a href="https://www.yepdesk.com/profile/dyuksha" className='text-center mt-[8%]' rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
           </div>
           <div className='pt-2 translate-y-[3vh]'>
             <Timer openEasterEgg={openEasterEgg} />
