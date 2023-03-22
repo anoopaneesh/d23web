@@ -14,6 +14,7 @@ import FirebaseProvider from './context/FirebaseContext';
 import Error from './pages/Error/Error';
 import Proshow from './pages/Proshow/Proshow';
 import Loading from './pages/Loading/Loading';
+import Tickets from './pages/Tickets/Tickets';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/proshows",
     element: <Proshow />
+  },
+  {
+    path: "/tickets",
+    element: <Tickets />
   },
   {
     path: "/dept/:id",
