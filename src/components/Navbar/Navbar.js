@@ -51,7 +51,7 @@ function Navbar() {
           }}
           exit={{ translateX: "100vw" }}
 
-          className={`border-l border-[#8ff2] bg-[#0009] backdrop-blur-2xl pl-7 fixed h-full top-0 right-0 w-1/2 z-30 mobile_shad`}>
+          className={`border-l border-[#8ff2] bg-[#0006] backdrop-blur-2xl pl-7 fixed h-full top-0 right-0 w-1/2 z-30 mobile_shad`}>
           <span onClick={handleNavClose} className='text-[#777] mt-4 text-3xl absolute top-0 right-5'><i className="fa-solid fa-xmark"></i></span>
           <div className='uppercase links-mobile links flex flex-col text-xl justify-center h-full space-y-20'>
             <a href="/" className={`no_drag select-none ${currentColor('home')}`}>Home</a>
@@ -60,7 +60,7 @@ function Navbar() {
             <a href="/proshows" className={`no_drag select-none ${currentColor('proshows')}`}>Proshows</a>
           </div>
         </motion.div>}</AnimatePresence>
-      <nav className={`${currentScroll > 50 && 'backdrop-blur-xl bg-[#000c] border-b border-[#aff2] shad'} z-10 bg-gradient-to-b from-transparent_black via-[#0005] to-transparent top-0 navbar flex justify-center text-foreground text-lg uppercase space-x-20 items-center pt-10 pb-10 fixed w-full`}>
+      <nav className={`${currentScroll > 50 && 'md:bg-[#000b] md:backdrop-blur-2xl backdrop-blur-xl bg-[#0007] border-b-[1px] border-[#0ff2] shad'} z-10 bg-gradient-to-b from-transparent_black via-[#0005] to-transparent top-0 navbar flex justify-center text-foreground text-lg uppercase space-x-20 items-center pt-10 pb-10 fixed w-full`}>
         {window.innerWidth < 600 ? <a href="/" className='w-1/3 absolute'><img src={logo_text} className="no_drag select-none" /></a> : <a href="/"><img src={logo} className="no_drag select-none w-8 absolute top-10 left-20" /></a>}
         {window.innerWidth < 600 && !navOpen && <p onClick={handleNavOpen} className='absolute top-7 right-10'><i className="fa-solid fa-bars"></i></p>}
         <div className='links hidden justify-between w-2/5 font-chakra md:flex'>

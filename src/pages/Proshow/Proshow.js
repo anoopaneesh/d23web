@@ -63,7 +63,7 @@ const Proshow = () => {
             <div className='proshow_body about'>
                 <AnimatePresence>
                     {modelOpen && <ProShowModal handleClose={closeModal}>
-                        <div className='md:translate-y-0 -translate-y-14 shad border border-heading w-[80vw] grid place-items-center md:w-[130vh] max-h-[100vh] bg-[#000a] backdrop-blur-xl'>
+                        <div className='md:overflow-y-auto overflow-y-scroll md:translate-y-0 -translate-y-14 shad border border-heading w-[80vw] grid place-items-center md:w-[130vh] max-h-[75vh] md:max-h-[100vh] bg-[#000a] backdrop-blur-xl'>
                             <div className='w-[96%] h-[100%] flex flex-col md:flex-row'>
                                 <div className='w-full flex py-4 justify-center md:justify-start'>
                                     <img src={selected.url} alt="" className='w-[90%]' />
@@ -75,7 +75,7 @@ const Proshow = () => {
                                         {/* <p className="text-4xl text-heading" style={{ color: selected.button_bg }}>₹ {selected.price}</p> */}
                                     </div>
                                     <div className='flex-1'>
-                                        <p className='md:-translate-x-10 mt-8 h-[75%] max-w-md'>{selected.about}
+                                        <p className='md:-translate-x-10 mt-8 h-[75%] max-w-md ml-4 mr-3  md:ml-0 md:mr-0 text-justify md:text-left'>{selected.about}
                                         </p>
                                     </div>
                                     <div className='flex justify-end space-x-4 px-4 pb-4 md:pt-0 pt-8'>
