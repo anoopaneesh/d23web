@@ -120,7 +120,7 @@ const Proshow = () => {
                             <div className="container-shows" style={{ marginTop: 0 }}>
                                 <div className="image-container">
                                     <img className='object-scale-down' src={proshows[1].banner_url} alt="" onClick={() => {
-                                        // openDay(2)
+                                        openDay(2)
                                     }} />
                                 </div>
                                 <div className="content-container reverse">
@@ -129,7 +129,7 @@ const Proshow = () => {
                                         <p>{proshows[1].artist.toUpperCase()}</p>
                                     </div>
                                     <div className='text-center' onClick={() => {
-                                        // openDay(2)
+                                        openDay(2)
                                     }}><button className='translate-x-6 bg-[#36fdfd] proshow_button day2_button font-chakra' type="button" style={{
                                         background
                                             : " linear-gradient(45deg, transparent 5%, #02d7f2 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",

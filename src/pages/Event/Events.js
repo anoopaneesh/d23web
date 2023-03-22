@@ -35,10 +35,45 @@ const Events = () => {
   }
   useEffect(() => {
     changeCurrentPage('events')
-
   }, [changeCurrentPage])
   return (
     <>
+      <AnimatePresence>
+        {modelOpen && <ProShowModal handleClose={closeModal}>
+          <div className='shad grid place-items-center max-h-[100vh] bg-[#000a] backdrop-blur-xl overflow-scroll md:overflow-hidden'>
+            <div className='md:border border-heading flex flex-col md:flex-row px-4 md:px-0'>
+              <div id="image_parent" className='flex justify-center pt-4 md:pb-4 md:pl-4  md:h-[500px]'>
+                <img src={selected.url || no_image} alt="" className='h-full w-auto aspect-square object-cover' />
+              </div>
+              <div className='md:flex md:flex-col md:justify-between max-w-lg'>
+                <div className='px-4 mt-4 flex flex-col space-y-3'>
+                  <h3 className='text-3xl md:text-5xl uppercase font-bold text-heading' >{`${selected.eventname}`}</h3>
+                  <div className='flex space-x-4 text-lg pb-5 text-[#bbb]'>
+                    <p>Day {selected.day}</p>
+                    <p>{selected.time}</p>
+                  </div>
+                  <p className='text-lg text-justify text-white'>{selected.description}</p>
+                  <div className='h-5'></div>
+                  <p className='text-lg text-white'>{`Contact : ${selected.contact}`}</p>
+                </div>
+                <div className='flex justify-center p-6 md:pb-6 pb-40 md:justify-end space-x-4'>
+                  <div className='text-center' onClick={closeModal}><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                    background
+                      : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
+
+                  }}>Back</button></div>
+                  <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                    background
+                      : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "black", boxShadow: "6px 0 0 var(--c_red)",
+
+                  }}>Register</button></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </ProShowModal>}
+      </AnimatePresence>
       <div className='min-h-screen pb-52 font-chakra about pt-32'>
         <Navbar />
 
@@ -69,49 +104,13 @@ const Events = () => {
             <h3 className='text-transparent text_stroke'>Events</h3>
           </div>
         </div>
-        <div className='flex gap-4 mx-24 mt-[32px]'>
-          <AnimatePresence>
-            {modelOpen && <ProShowModal handleClose={closeModal}>
-              <div className='shad grid place-items-center max-h-[100vh] bg-[#000a] backdrop-blur-xl overflow-scroll md:overflow-hidden'>
-                <div className='md:border border-heading flex flex-col md:flex-row px-4 md:px-0'>
-                  <div id="image_parent" className='flex justify-center pt-4 md:pb-4 md:pl-4  md:h-[500px]'>
-                    <img src={selected.url || no_image} alt="" className='h-full w-auto aspect-square object-cover' />
-                  </div>
-                  <div className='md:flex md:flex-col md:justify-between max-w-lg'>
-                    <div className='px-4 mt-4 flex flex-col space-y-3'>
-                      <h3 className='text-3xl md:text-5xl uppercase font-bold text-heading' >{`${selected.eventname}`}</h3>
-                      <div className='flex space-x-4 text-lg pb-5 text-[#bbb]'>
-                        <p>Day {selected.day}</p>
-                        <p>{selected.time}</p>
-                      </div>
-                      <p className='text-lg text-justify text-white'>{selected.description}</p>
-                      <div className='h-5'></div>
-                      <p className='text-lg text-white'>{`Contact : ${selected.contact}`}</p>
-                    </div>
-                    <div className='flex justify-center p-6 md:pb-6 pb-40 md:justify-end space-x-4'>
-                      <div className='text-center' onClick={closeModal}><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
-                        background
-                          : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
-
-                      }}>Back</button></div>
-                      <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
-                        background
-                          : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "black", boxShadow: "6px 0 0 var(--c_red)",
-
-                      }}>Register</button></a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </ProShowModal>}
-          </AnimatePresence>
+        <div className='h-3'></div>
+        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 justify-center'>
           {generalEvents.day1.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
           {generalEvents.day2.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
           {generalEvents.day3.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
           <CurvedContainer logo={informals_logo} clip text />
         </div>
-
       </div>
       <Footer />
     </>
