@@ -23,11 +23,9 @@ const FirebaseProvider = ({ children }) => {
     const [listday1, setListday1] = useState([])
     const [listday2, setListday2] = useState([])
     const [listday3, setListday3] = useState([])
-    const [proshows, setProshows] = useState([])
 
     useEffect(() => {
 
-        getProshowData()
         getAllWorkshops().then((data) => {
             setListday1(data.day1)
             setListday2(data.day2)
@@ -36,20 +34,19 @@ const FirebaseProvider = ({ children }) => {
         }).catch(err => {
             console.log('Workshop error', err)
         })
-        getGeneralEvents().then(data => {
-            setGeneralEvents(data)
-        })
 
 
     }, [])
     async function getProshowData() {
-        let listdata = []
-        const pquery = query(collection(db, `events`), orderBy("day"));
-        const querySnapshot = await getDocs(pquery)
-        querySnapshot.forEach((doc) => {
-            listdata.push(doc.data())
+        return new Promise(async (resolve, reject) => {
+            let listdata = []
+            const pquery = query(collection(db, `events`), orderBy("day"));
+            const querySnapshot = await getDocs(pquery)
+            querySnapshot.forEach((doc) => {
+                listdata.push(doc.data())
+            })
+            resolve(listdata)
         })
-        setProshows(listdata)
     }
     async function getDaysData(dept) {
         return new Promise(async (resolve, reject) => {
@@ -73,31 +70,29 @@ const FirebaseProvider = ({ children }) => {
 
     async function getGeneralEvents() {
         return new Promise(async (resolve, reject) => {
-            if (db == null || app == null) {
-                reject()
-            } else {
-                const data = {
-                    day1: [],
-                    day2: [],
-                    day3: []
-                }
-                let q1 = query(collection(db, `cse/events/day1`), where('type', "==", "general_event"));
-                let q2 = query(collection(db, `cse/events/day2`), where('type', "==", "general_event"));
-                let q3 = query(collection(db, `cse/events/day3`), where('type', "==", "general_event"));
-                const qs1 = await getDocs(q1);
-                const qs2 = await getDocs(q2);
-                const qs3 = await getDocs(q3);
-                qs1.forEach((doc) => {
-                    data.day1.push(doc.data())
-                });
-                qs2.forEach((doc) => {
-                    data.day2.push(doc.data())
-                });
-                qs3.forEach((doc) => {
-                    data.day3.push(doc.data())
-                });
-                resolve(data)
+
+            const data = {
+                day1: [],
+                day2: [],
+                day3: []
             }
+            let q1 = query(collection(db, `cse/events/day1`), where('type', "==", "general_event"));
+            let q2 = query(collection(db, `cse/events/day2`), where('type', "==", "general_event"));
+            let q3 = query(collection(db, `cse/events/day3`), where('type', "==", "general_event"));
+            const qs1 = await getDocs(q1);
+            const qs2 = await getDocs(q2);
+            const qs3 = await getDocs(q3);
+            qs1.forEach((doc) => {
+                data.day1.push(doc.data())
+            });
+            qs2.forEach((doc) => {
+                data.day2.push(doc.data())
+            });
+            qs3.forEach((doc) => {
+                data.day3.push(doc.data())
+            });
+            resolve(data)
+
         })
     }
 
@@ -137,7 +132,7 @@ const FirebaseProvider = ({ children }) => {
 
 
 
-    return <FirebaseContext.Provider value={{ generalEvents, getDaysData, getProshowData, proshows, getAllWorkshops, listday1, listday2, listday3 }}>
+    return <FirebaseContext.Provider value={{ getGeneralEvents, getDaysData, getProshowData, getAllWorkshops, listday1, listday2, listday3 }}>
         {children}
     </FirebaseContext.Provider>
 }

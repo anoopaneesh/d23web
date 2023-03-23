@@ -13,18 +13,17 @@ import Loading from '../Loading/Loading'
 const Proshow = () => {
     const { changeCurrentPage } = useNavContext()
     const [loading, setLoading] = useState(true)
-    const { proshows } = useFirebaseContext()
+    const [proshows,setProshows] = useState([])
+    const { getProshowData } = useFirebaseContext()
     useEffect(() => {
         changeCurrentPage('proshows')
         setTimeout(() => {
             setLoading(false)
         }, 2000)
         console.log('reached')
-        proshows.map(el => {
-            console.log(el)
-        })
+        getProshowData().then(data => setProshows(data))
         // eslint-disable-next-line
-    }, [changeCurrentPage])
+    }, [])
     const [modelOpen, setModalOpen] = useState(false)
     const [selected, setSelected] = useState({})
     function openModal() {

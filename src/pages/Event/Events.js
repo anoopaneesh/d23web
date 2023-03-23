@@ -22,9 +22,10 @@ import { AnimatePresence } from 'framer-motion'
 
 const Events = () => {
   const { changeCurrentPage } = useNavContext()
-  const { generalEvents } = useFirebaseContext()
+  const { getGeneralEvents } = useFirebaseContext()
   const [modelOpen, setModelOpen] = useState(false)
   const [selected, setSelected] = useState({})
+  const [generalEvents, setGeneralEvents] = useState({ day1: [], day2: [], day3: [] })
   function openModal(event) {
     setSelected(event)
     setModelOpen(true)
@@ -35,7 +36,8 @@ const Events = () => {
   }
   useEffect(() => {
     changeCurrentPage('events')
-  }, [changeCurrentPage])
+    getGeneralEvents().then(data => setGeneralEvents(data))
+  }, [])
   return (
     <>
       <AnimatePresence>
@@ -74,8 +76,9 @@ const Events = () => {
           </div>
         </ProShowModal>}
       </AnimatePresence>
-      <div className='min-h-screen pb-52 font-chakra about pt-32'>
-        <Navbar />
+      <Navbar />
+      <div className='min-h-screen pb-52 font-chakra about pt-32 w-11/12 m-auto'>
+
 
         <div className="h-10 w-full"></div>
         <div className='w-full flex justify-center mb-[32px]'>
@@ -98,19 +101,30 @@ const Events = () => {
 
 
 
-        <div className='w-full flex justify-center mb-[15px] mt-40 md:mt-52'>
+        <div className='w-full flex justify-center mt-40 md:mt-52'>
           <div className='text-4xl md:text-7xl text-heading mb-8 font-bold flex flex-col md:flex-row md:justify-start md:items-center justify-center items-center'>
             <h2 className='md:-translate-x-5'>General</h2>
             <h3 className='text-transparent text_stroke'>Events</h3>
           </div>
         </div>
         <div className='h-3'></div>
-        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 justify-center'>
-          {generalEvents.day1.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
-          {generalEvents.day2.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
-          {generalEvents.day3.map(event => <CurvedContainer onClick={() => openModal(event)} logo={event.url} clip />)}
+        <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 1</h2><span>31/03/2023</span></div>
+        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
+          {generalEvents.day1.map(event => <CurvedContainer onClick={() => {event.day = 1;openModal(event)}} logo={event.url} clip />)}
+
+        </div>
+         <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 2</h2><span>01/04/2023</span></div>
+        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
+
+          {generalEvents.day2.map(event => <CurvedContainer onClick={() => {event.day = 2;openModal(event)}} logo={event.url} clip />)}
+
+        </div>
+         <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 3</h2><span>02/04/2023</span></div>
+        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32 '>
+          {generalEvents.day3.map(event => <CurvedContainer onClick={() => {event.day = 3;openModal(event)}} logo={event.url} clip />)}
           <CurvedContainer logo={informals_logo} clip text />
         </div>
+        {/* <h2 className='text-2xl mb-8'>DAY 1</h2><span>31/03/2023</span></div> */}
       </div>
       <Footer />
     </>
