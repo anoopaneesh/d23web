@@ -12,40 +12,30 @@ import no_image from '../../assets/jpeg/No_Image.png'
 const Dept = ({ workshop }) => {
   const { changeCurrentPage } = useNavContext()
   const { id } = useParams()
-  const { day1, day2, day3, getDaysData, getAllWorkshops } = useFirebaseContext()
-  const [listday1, setListday1] = useState([])
-  const [listday2, setListday2] = useState([])
-  const [listday3, setListday3] = useState([])
+  const { getDaysData, getAllWorkshops } = useFirebaseContext()
+  const [day1, setDay1] = useState([])
+  const [day2, setDay2] = useState([])
+  const [day3, setDay3] = useState([])
 
   const [modelOpen, setModalOpen] = useState(false)
   const [selected, setSelected] = useState({})
   function openModal() {
-    // document.body.style.position = 'fixed';
-    // document.body.style.top = `-${window.scrollY}px`;
     if (window.innerWidth < 700) {
       document.body.style.position = 'fixed';
       document.body.style.top = `-${window.scrollY}px`;
     }
-
-    // document.getElementById('dept-b').style.filter = 'blur(10px)'
     setModalOpen(true)
   }
   function closeModal() {
-    // const scrollY = document.body.style.top;
-    // document.body.style.position = '';
-    // document.body.style.top = '';
-    // window.scrollTo(0, parseInt(scrollY || '0') * -1);
     if (window.innerWidth < 700) {
       const scrollY = document.body.style.top;
       document.body.style.position = '';
       document.body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
-    // document.getElementById('dept-b').style.filter = 'blur(0)'
 
     setSelected({})
     setModalOpen(false)
-    // window.location.reload()
   }
   useEffect(() => {
     changeCurrentPage(workshop ? 'workshops' : 'events')
@@ -54,29 +44,17 @@ const Dept = ({ workshop }) => {
       getAllWorkshops()
       document.documentElement.style.setProperty('--heading', '#FD0130')
     } else {
-      getDaysData(id)
+      getDaysData(id).then(data => {
+        setDay1(data.day1)
+        setDay2(data.day2)
+        setDay3(data.day3)
+      })
       document.documentElement.style.setProperty('--heading', '#FFEE08')
     }
 
     return () => { document.documentElement.style.setProperty('--heading', '#02d7f2') }
     // eslint-disable-next-line
   }, [])
-  useEffect(() => {
-    if (!day1 || day1.length === 0) return
-    setListday1(workshop ? day1 : day1.filter(el => el.dept === id))
-    // eslint-disable-next-line
-  }, [day1])
-  useEffect(() => {
-    if (!day2 || day2.length === 0) return
-    setListday2(workshop ? day2 : day2.filter(el => el.dept === id))
-    // eslint-disable-next-line
-  }, [day2])
-  useEffect(() => {
-    if (!day2 || day2.length === 0) return
-    setListday3(workshop ? day3 : day3.filter(el => el.dept === id))
-    // eslint-disable-next-line
-  }, [day3])
-
 
   function handleSelect(item) {
     setSelected(item)
@@ -128,35 +106,35 @@ const Dept = ({ workshop }) => {
             <p>{id.toUpperCase()}</p>
             <h2 className='text-transparent text_stroke text-4xl'>Corner</h2>
           </div>}
-          <AnimatePresence>{listday1.length !== 0 && <motion.div
-            key={day1}
+          <AnimatePresence>{day1.length !== 0 && <motion.div
+            key={1}
           >
             <div className='flex  items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 1</h2><span>31/03/2023</span></div>
             <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
-              {listday1.map(item => {
+              {day1.map(item => {
                 item.day = 1
                 return <EventContainer key={item.ticket} item={item} onClick={handleSelect} />
               })}
             </div>
           </motion.div>}</AnimatePresence>
-          <AnimatePresence>{listday2.length !== 0 && <motion.div className='mt-20'
-            key={day1}
+          <AnimatePresence>{day2.length !== 0 && <motion.div className='mt-20'
+            key={2}
           >
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 2</h2><span>01/04/2023</span></div>
             <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
-              {listday2.map(item => {
+              {day2.map(item => {
                 item.day = 2
                 return <EventContainer key={item.ticket} item={item} onClick={handleSelect} />
               })}
             </div>
           </motion.div>}</AnimatePresence>
-          <AnimatePresence> {listday3.length !== 0 && <motion.div className='mt-20'>
+          <AnimatePresence> {day3.length !== 0 && <motion.div className='mt-20'>
             <div className='flex items-baseline space-x-8'>
               <h2 className='text-2xl mb-8'>DAY 3</h2><span>02/03/2023</span></div>
             <div className='md:space-y-0 space-y-8 flex gap-y-4 md:flex-row flex-col md:grid' style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
-              {listday3.map(item => {
+              {day3.map(item => {
                 item.day = 3
                 return <EventContainer key={item.ticket} item={item} onClick={handleSelect} />
               })}
