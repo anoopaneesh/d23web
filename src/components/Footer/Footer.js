@@ -37,8 +37,8 @@ const Footer = () => {
                 {window.innerWidth < 700 ? <img src={logo_mobile} alt="" className='w-8 object-contain text-center' /> : <img src={logo} alt="" className='w-44 object-contain text-center' />}
             </div>
             <div className='absolute top-[50%] right-10 md:right-96 -translate-y-1/2 flex space-x-4 text-xl'>
-                <a href='https://www.instagram.com/dyuksha.nssce/?igshid=YmMyMTA2M2Y%3D'><i className="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@dyuksha2093"> <i className="fa-brands fa-youtube"></i></a>
+                <a href='https://www.instagram.com/dyuksha.nssce/?igshid=YmMyMTA2M2Y%3D'><i className="fa-brands fa-instagram hover:text-heading duration-300"></i></a>
+                <a href="https://www.youtube.com/@dyuksha2093"> <i className="fa-brands fa-youtube hover:text-heading duration-300"></i></a>
             </div>
         </div>
     )
