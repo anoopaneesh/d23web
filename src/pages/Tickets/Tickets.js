@@ -38,8 +38,9 @@ const Tickets = () => {
                                 <p> Day 3 Pass</p>
                             </div>
                             <div className='mt-8 md:mt-[30%]'>
-                                <p><s className='text-xl font-bold italic text-[#9c8a26]'>&#8377;1499</s>&nbsp;&nbsp;<span className='text-4xl font-bold italic text-[#FFD700]'>&#8377;1399</span></p>
-                                <p className='text-[#FFD700] text-lg'>For workshop attendees</p>
+                            {/* <s className='text-xl font-bold italic text-[#9c8a26]'>&#8377;1499</s>&nbsp;&nbsp; */}
+                                <p><span className='text-4xl font-bold italic text-[#FFD700]'>&#8377;1399</span></p>
+                                {/* <p className='text-[#FFD700] text-lg'>For workshop attendees</p> */}
                             </div>
                             <div>
                                 <a href="https://www.yepdesk.com/dyuksha-festival-ticket-3-days" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
