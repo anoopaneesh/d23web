@@ -70,6 +70,7 @@ function Navbar() {
 
           <a href="/workshops" className={`no_drag select-none ${currentColor('workshops')}`}>Workshops</a>
           <a href="/proshows" className={`no_drag select-none ${currentColor('proshows')}`}>Proshows</a>
+          <a href="/tickets" className={`no_drag select-none ${currentColor('tickets')}`}>Tickets</a>
         </div>
       </nav>
     </>

@@ -60,6 +60,9 @@ const Dept = ({ workshop }) => {
     setSelected(item)
     openModal()
   }
+  function handleBack(){
+    window.history.back()
+  }
   return (
     <div className='about min-h-screen font-chakra text-white'>
       <AnimatePresence>
@@ -101,7 +104,10 @@ const Dept = ({ workshop }) => {
       <div id="dept-b">
         <Navbar />
         <div className='w-2/3 m-auto pb-10 pt-44'>
-          {!workshop && <div className='text-6xl md:text-7xl text-heading mb-8 font-bold flex justify-start items-baseline'>
+          {!workshop && <div className='relative text-6xl md:text-7xl text-heading mb-8 font-bold flex justify-start items-baseline'>
+            <div className='hidden md:block absolute top-1/2 -translate-y-1/2 -left-20'>
+              <p className='text-5xl cursor-pointer hover:text-white transition-colors' onClick={handleBack}>&lt;</p>
+              </div>
             {/* <div className='w-[1px] h-16 -translate-x-10 bg-heading'></div> */}
             <p>{id.toUpperCase()}</p>
             <h2 className='text-transparent text_stroke text-4xl'>Corner</h2>

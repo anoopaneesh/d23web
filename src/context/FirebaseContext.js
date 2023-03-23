@@ -42,12 +42,21 @@ const FirebaseProvider = ({ children }) => {
 
 
     }, [])
+    async function getProshowData() {
+        let listdata = []
+        const pquery = query(collection(db, `events`), orderBy("day"));
+        const querySnapshot = await getDocs(pquery)
+        querySnapshot.forEach((doc) => {
+            listdata.push(doc.data())
+        })
+        setProshows(listdata)
+    }
     async function getDaysData(dept) {
         return new Promise(async (resolve, reject) => {
             let day1 = await getData(1, dept)
             let day2 = await getData(2, dept)
             let day3 = await getData(3, dept)
-            resolve({day1,day2,day3})
+            resolve({ day1, day2, day3 })
         })
 
     }
@@ -124,15 +133,7 @@ const FirebaseProvider = ({ children }) => {
     }
 
 
-    async function getProshowData() {
-        let listdata = []
-        const pquery = query(collection(db, `events`), orderBy("day"));
-        const querySnapshot = await getDocs(pquery)
-        querySnapshot.forEach((doc) => {
-            listdata.push(doc.data())
-        })
-        setProshows(listdata)
-    }
+
 
 
 

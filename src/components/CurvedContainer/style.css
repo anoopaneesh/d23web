@@ -7,6 +7,12 @@
 .curved_container:hover {
     background-color: white;
 }
+.ticket{
+    background: goldenrod;
+}
+.ticket:hover{
+    background: white;
+}
 
 .inner {
     width: calc(100% - 5px);
