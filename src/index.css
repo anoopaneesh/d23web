@@ -13,10 +13,10 @@
     --heading: #02d7f2;
     --c_red: #fd0130;
     --c_yellow: #ffee08;
-    --after_text_shadow : 
+    --after_text_shadow:
 
-    /* text-shadow: -5px 0 var(--heading); */
-  /* animation: glitch-anim-2 0.3s infinite ease-in-out alternate-reverse; */
+      /* text-shadow: -5px 0 var(--heading); */
+      /* animation: glitch-anim-2 0.3s infinite ease-in-out alternate-reverse; */
   }
 }
 
