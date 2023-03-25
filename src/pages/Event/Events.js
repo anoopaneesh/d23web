@@ -64,11 +64,11 @@ const Events = () => {
                       : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
                   }}>Back</button></div>
-                  <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                  {selected.ticket != '' && <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
                       : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
-                  }}>Register</button></a>
+                  }}>Register</button></a>}
                 </div>
               </div>
             </div>
@@ -110,19 +110,19 @@ const Events = () => {
         <div className='h-3'></div>
         <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 1</h2><span>31/03/2023</span></div>
         <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
-          {generalEvents.day1.map(event => <CurvedContainer onClick={() => {event.day = 1;openModal(event)}} logo={event.url} clip />)}
+          {generalEvents.day1.map(event => <CurvedContainer onClick={() => { event.day = 1; openModal(event) }} logo={event.url} clip />)}
 
         </div>
-         <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 2</h2><span>01/04/2023</span></div>
+        <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 2</h2><span>01/04/2023</span></div>
         <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
 
-          {generalEvents.day2.map(event => <CurvedContainer onClick={() => {event.day = 2;openModal(event)}} logo={event.url} clip />)}
+          {generalEvents.day2.map(event => <CurvedContainer onClick={() => { event.day = 2; openModal(event) }} logo={event.url} clip />)}
 
         </div>
-         <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 3</h2><span>02/04/2023</span></div>
+        <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 3</h2><span>02/04/2023</span></div>
         <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32 '>
-          {generalEvents.day3.map(event => <CurvedContainer onClick={() => {event.day = 3;openModal(event)}} logo={event.url} clip />)}
-          <CurvedContainer logo={informals_logo} clip text />
+          {generalEvents.day3.map(event => <CurvedContainer onClick={() => { event.day = 3; openModal(event) }} logo={event.url} clip />)}
+          {/* <CurvedContainer logo={informals_logo} clip text /> */}
         </div>
         {/* <h2 className='text-2xl mb-8'>DAY 1</h2><span>31/03/2023</span></div> */}
       </div>

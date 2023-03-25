@@ -13,17 +13,27 @@ import Loading from '../Loading/Loading'
 const Proshow = () => {
     const { changeCurrentPage } = useNavContext()
     const [loading, setLoading] = useState(true)
-    const [proshows,setProshows] = useState([])
+    const [proshows, setProshows] = useState([])
     const { getProshowData } = useFirebaseContext()
     useEffect(() => {
-        changeCurrentPage('proshows')
-        setTimeout(() => {
+        setTimeout(()=>{
             setLoading(false)
-        }, 2000)
+        },2000)
+        changeCurrentPage('proshows')
         console.log('reached')
-        getProshowData().then(data => setProshows(data))
+        getProshowData().then(data => {
+            setProshows(data)
+            data.map(item =>{
+                preloadImage(item.banner_url)
+            })
+            
+        })
         // eslint-disable-next-line
     }, [])
+    function preloadImage(url) {
+        var img = new Image();
+        img.src = url;
+    }
     const [modelOpen, setModalOpen] = useState(false)
     const [selected, setSelected] = useState({})
     function openModal() {
@@ -58,7 +68,7 @@ const Proshow = () => {
     }
 
     return (
-        loading ? <Loading /> :
+        loading || proshows.length != 3 ? <Loading /> :
             <div className='proshow_body about'>
                 <AnimatePresence>
                     {modelOpen && <ProShowModal handleClose={closeModal}>
