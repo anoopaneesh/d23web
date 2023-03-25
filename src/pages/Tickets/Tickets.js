@@ -26,7 +26,7 @@ const Tickets = () => {
                         <img src={golden_pass} alt="" className='md:w-[70%] ' />
                         <div className='flex-1 flex flex-col justify-end'>
                             {/* <p className='uppercase font-bold text-3xl'>golden pass</p> */}
-                            <p>Includes</p>
+                            <p className='opacity-50'>Includes</p>
                             <div className='text-xl'>
                                 {/* <div>
                                     &#x2023;
@@ -47,57 +47,60 @@ const Tickets = () => {
                                     background
                                         : `linear-gradient(45deg, transparent 5%, #FFD700 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Buy Now</button></a>
+                                }}>Book Now</button></a>
                             </div>
                         </div>
                     </div>
-                    <div className='w-full md:h-64 flex flex-col md:flex-row gap-5 mt-40 md:mt-5'>
-                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[50vh] md:h-full border border-heading day_pass relative backdrop-blur-md'>
+                    <div className='w-full md:h-64 flex flex-col md:flex-row gap-5 mt-32 md:mt-5'>
+                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[31vh] md:h-full border border-heading day_pass relative'>
                             <div className='w-full h-full absolute top-0 left-0'>
-                                <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' />
+                                {/* <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' /> */}
                             </div>
                             <div className='text-heading'>
                                 <p className='font-bold  text-3xl uppercase no_drag'>day 1</p>
                                 <p className='font-bold  text-6xl uppercase no_drag'>pass</p>
+                                <p className='font-bold  text-3xl uppercase no_drag'>&#8377;399</p>
                             </div>
                             <div className='self-end translate-y-4'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-1" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Buy Now</button></a>
+                                }}>Book Now</button></a>
                             </div>
                         </div>
-                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[50vh] md:h-full border border-heading day_pass relative backdrop-blur-md'>
+                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[31vh] md:h-full border border-heading day_pass relative'>
                             <div className='w-full h-full absolute top-0 left-0'>
-                                <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' />
+                                {/* <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' /> */}
                             </div>
                             <div className='text-heading'>
                                 <p className='font-bold  text-3xl uppercase no_drag'>day 2</p>
                                 <p className='font-bold  text-6xl uppercase no_drag'>pass</p>
+                                <p className='font-bold  text-3xl uppercase no_drag'>&#8377;599</p>
                             </div>
                             <div className='self-end translate-y-4'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-2" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Buy Now</button></a>
+                                }}>Book Now</button></a>
                             </div>
                         </div>
-                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[50vh] md:h-full border border-heading day_pass relative backdrop-blur-md'>
+                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[31vh] md:h-full border border-heading day_pass relative'>
                             <div className='w-full h-full absolute top-0 left-0'>
-                                <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' />
+                                {/* <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' /> */}
                             </div>
                             <div className='text-heading'>
                                 <p className='font-bold  text-3xl uppercase no_drag'>day 3</p>
                                 <p className='font-bold  text-6xl uppercase no_drag'>pass</p>
+                                <p className='font-bold  text-3xl uppercase no_drag'>&#8377;699</p>
                             </div>
                             <div className='self-end translate-y-4'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-3" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Buy Now</button></a>
+                                }}>Book Now</button></a>
                             </div>
                         </div>
                     </div>
