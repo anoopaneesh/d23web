@@ -31,22 +31,22 @@ const Tickets = () => {
             <Navbar />
             <div className='duration-150 font-chakra drawer uppercase text-white text-[10px] md:text-[13px] text-bold fixed w-[100vw] h-[38px] grid place-items-center z-10 bg-[#200C] border-b border-t border-[#F00] backdrop-blur-xl md:mt-24 mt-[80px] shad overflow-hidden'>
                 <div className='flex row gap-8 place-items-center h-[38px]'>
-                    <p>25% OFF on all passes for workshop attendees</p>
+                    <p><span className='font-bold'>25% OFF</span> on all passes for workshop attendees</p>
                     <div onClick={changeHeight} className='grid place-items-center h-[38px] w-[38px] hover:scale-[1.2] text-[#F00] duration-200 hover:cursor-pointer'>
                         <div className=' border-[1px] border-red rounded-full lowercase w-[16px] h-[16px] grid place-items-center border-[#F00]'>
                             <p className='md:-translate-y-[3px] -translate-y-[3px] text-sm'>i</p>
                         </div>
                     </div>
                 </div>
-                <div className='text-[15px] w-4/5 normal-case mb-4'>
-                    <p className='font-bold uppercase'>25% OFF on all passes</p>
-                    <p>Steps to redeem offer</p>
+                <div className='text-[12px] md:text-[15px] w-4/5 normal-case mb-4'>
+                    <p className='font-bold uppercase'>Book workshop ticket and claim 25% off on offline booking of all passes</p>
+                    <p className='mt-4'>Steps to redeem offer</p>
                     <p><a href='/workshops' className='text-[#F00] underline font-bold'>1. Grab your workshop ticket</a></p>
                     <p>2. Submit your workshop ticket during the event</p>
                     <p>3. Claim 25% OFF on any pass (on offline purchase)</p>
                 </div>
             </div>
-            <div className='pt-28 md:pt-48 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
+            <div className='pt-40 md:pt-52 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
                 <div className='w-10/12 md:w-2/3 m-auto'>
                     <div className='flex flex-col md:flex-row gap-5 h-[50vh] md:h-auto'>
                         <img src={golden_pass} alt="" className='self-end justify-self-end md:w-[70%] ' />
