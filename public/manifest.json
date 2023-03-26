@@ -12,6 +12,7 @@
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any maskable"
+    
     },
     {
       "src": "windows11/SmallTile.scale-100.png",
