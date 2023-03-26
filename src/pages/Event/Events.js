@@ -108,19 +108,19 @@ const Events = () => {
           </div>
         </div>
         <div className='h-3'></div>
-        <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 1</h2><span>31/03/2023</span></div>
-        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
+        <div className='flex items-center justify-center md:mt-12 space-x-8 mb-8 text-white'><h2 className='text-2xl'>DAY 1</h2><span>31/03/2023</span></div>
+        <div className='items-center justify-center flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
           {generalEvents.day1.map(event => <CurvedContainer onClick={() => { event.day = 1; openModal(event) }} logo={event.url} clip />)}
 
         </div>
-        <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 2</h2><span>01/04/2023</span></div>
-        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
+        <div className='flex items-center justify-center md:mt-8 space-x-8 mb-8 text-white'><h2 className='text-2xl'>DAY 2</h2><span>01/04/2023</span></div>
+        <div className='items-center justify-center flex flex-wrap flex-col md:flex-row gap-3 mb-32'>
 
           {generalEvents.day2.map(event => <CurvedContainer onClick={() => { event.day = 2; openModal(event) }} logo={event.url} clip />)}
 
         </div>
-        <div className='flex items-baseline justify-center md:justify-start space-x-8 mb-4 text-white'><h2 className='text-2xl'>DAY 3</h2><span>02/04/2023</span></div>
-        <div className='items-center md:items-start flex flex-wrap flex-col md:flex-row gap-3 mb-32 '>
+        <div className='flex items-center justify-center md:mt-8 space-x-8 mb-8 text-white'><h2 className='text-2xl'>DAY 3</h2><span>02/04/2023</span></div>
+        <div className='items-center justify-center flex flex-wrap flex-col md:flex-row gap-3 mb-32 '>
           {generalEvents.day3.map(event => <CurvedContainer onClick={() => { event.day = 3; openModal(event) }} logo={event.url} clip />)}
           {/* <CurvedContainer logo={informals_logo} clip text /> */}
         </div>

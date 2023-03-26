@@ -53,7 +53,7 @@ function Navbar() {
 
           className={`border-l border-[#8ff2] bg-[#0006] backdrop-blur-2xl pl-7 fixed h-full top-0 right-0 w-1/2 z-30 mobile_shad`}>
           <span onClick={handleNavClose} className='text-[#777] mt-4 text-3xl absolute top-0 right-5'><i className="fa-solid fa-xmark"></i></span>
-          <div className='uppercase links-mobile links flex flex-col text-xl justify-center h-full space-y-20'>
+          <div className='uppercase links-mobile links flex flex-col text-lg justify-center h-full space-y-10'>
             <a href="/" className={`no_drag select-none ${currentColor('home')}`}>Home</a>
             <a href="/events" className={`no_drag select-none ${currentColor('events')}`}>Events</a>
             <a href="/workshops" className={`no_drag select-none ${currentColor('workshops')}`}>Workshops</a>

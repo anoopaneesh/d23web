@@ -20,13 +20,13 @@ const Tickets = () => {
     return (
         <div>
             <Navbar />
-            <div className='pt-28 md:pt-32 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
+            <div className='pt-28 md:pt-40 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
                 <div className='w-10/12 md:w-2/3 m-auto'>
                     <div className='flex flex-col md:flex-row gap-5 h-[50vh] md:h-auto'>
-                        <img src={golden_pass} alt="" className='md:w-[70%] ' />
+                        <img src={golden_pass} alt="" className='self-end justify-self-end md:w-[70%] ' />
                         <div className='flex-1 flex flex-col justify-end'>
                             {/* <p className='uppercase font-bold text-3xl'>golden pass</p> */}
-                            <p className='opacity-50'>Includes</p>
+                            <p className='opacity-50 text-sm'>Includes</p>
                             <div className='text-xl'>
                                 {/* <div>
                                     &#x2023;
@@ -39,7 +39,7 @@ const Tickets = () => {
                             </div>
                             <div className='mt-8 md:mt-[30%]'>
                                 {/* <s className='text-xl font-bold italic text-[#9c8a26]'>&#8377;1499</s>&nbsp;&nbsp; */}
-                                <p><span className='text-4xl font-bold italic text-[#FFD700]'>&#8377;1499</span></p>
+                                <p><span className='text-4xl text-[#FFD700]'>&#8377;1499</span></p>
                                 {/* <p className='text-[#FFD700] text-lg'>For workshop attendees</p> */}
                             </div>
                             <div>
@@ -52,33 +52,31 @@ const Tickets = () => {
                         </div>
                     </div>
                     <div className='w-full md:h-64 flex flex-col md:flex-row gap-5 mt-32 md:mt-5'>
-                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[31vh] md:h-full border border-heading day_pass relative'>
+                        <div className='w-full md:w-1/3 p-4 flex flex-col justify-between md:h-[50%] pb-2 pr-4  border border-heading day_pass relative bg-[#111]'>
                             <div className='w-full h-full absolute top-0 left-0'>
                                 {/* <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' /> */}
                             </div>
                             <div className='text-heading'>
-                                <p className='font-bold  text-3xl uppercase no_drag'>day 1</p>
-                                <p className='font-bold  text-6xl uppercase no_drag'>pass</p>
-                                <p className='font-bold  text-3xl uppercase no_drag'>&#8377;399</p>
+                                <p className='font-bold  text-3xl uppercase no_drag'>day 1 pass</p>
+                                <p className='text-3xl uppercase no_drag'>&#8377;399</p>
                             </div>
-                            <div className='self-end translate-y-4'>
-                                <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-1" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                            <div className='self-end'>
+                                <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-1" target="_blank" rel="noreferrer" className='text-center m-0'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
                                 }}>Book Now</button></a>
                             </div>
                         </div>
-                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[31vh] md:h-full border border-heading day_pass relative'>
+                        <div className='w-full md:w-1/3 p-4 flex flex-col justify-between md:h-[50%] pb-2 mt-4 md:mt-0 border border-heading day_pass relative bg-[#111]'>
                             <div className='w-full h-full absolute top-0 left-0'>
                                 {/* <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' /> */}
                             </div>
                             <div className='text-heading'>
-                                <p className='font-bold  text-3xl uppercase no_drag'>day 2</p>
-                                <p className='font-bold  text-6xl uppercase no_drag'>pass</p>
-                                <p className='font-bold  text-3xl uppercase no_drag'>&#8377;599</p>
+                                <p className='font-bold  text-3xl uppercase no_drag'>day 2 pass</p>
+                                <p className='text-3xl uppercase no_drag'>&#8377;599</p>
                             </div>
-                            <div className='self-end translate-y-4'>
+                            <div className='self-end'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-2" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
@@ -86,16 +84,15 @@ const Tickets = () => {
                                 }}>Book Now</button></a>
                             </div>
                         </div>
-                        <div className='w-full md:w-1/3 p-8 flex flex-col justify-between h-[31vh] md:h-full border border-heading day_pass relative'>
+                        <div className='w-full md:w-1/3 p-4 flex flex-col justify-between md:h-[50%] pb-2 pr-4 mt-4 md:mt-0 border border-heading day_pass relative bg-[#111]'>
                             <div className='w-full h-full absolute top-0 left-0'>
                                 {/* <img src={pattern2} alt="" className='w-full h-full object-cover opacity-[15%]' /> */}
                             </div>
                             <div className='text-heading'>
-                                <p className='font-bold  text-3xl uppercase no_drag'>day 3</p>
-                                <p className='font-bold  text-6xl uppercase no_drag'>pass</p>
-                                <p className='font-bold  text-3xl uppercase no_drag'>&#8377;699</p>
+                                <p className='font-bold  text-3xl uppercase no_drag'>day 3 pass</p>
+                                <p className='text-3xl uppercase no_drag'>&#8377;699</p>
                             </div>
-                            <div className='self-end translate-y-4'>
+                            <div className='self-end'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-3" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,

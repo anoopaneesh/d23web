@@ -16,17 +16,17 @@ const Proshow = () => {
     const [proshows, setProshows] = useState([])
     const { getProshowData } = useFirebaseContext()
     useEffect(() => {
-        setTimeout(()=>{
+        setTimeout(() => {
             setLoading(false)
-        },2000)
+        }, 2000)
         changeCurrentPage('proshows')
         console.log('reached')
         getProshowData().then(data => {
             setProshows(data)
-            data.map(item =>{
+            data.map(item => {
                 preloadImage(item.banner_url)
             })
-            
+
         })
         // eslint-disable-next-line
     }, [])
@@ -139,7 +139,7 @@ const Proshow = () => {
                                     </div>
                                     <div className='text-center' onClick={() => {
                                         openDay(2)
-                                    }}><button className='translate-x-6 bg-[#36fdfd] proshow_button day2_button font-chakra' type="button" style={{
+                                    }}><button className='md:translate-x-[70%] bg-[#36fdfd] proshow_button day2_button font-chakra' type="button" style={{
                                         background
                                             : " linear-gradient(45deg, transparent 5%, #02d7f2 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
