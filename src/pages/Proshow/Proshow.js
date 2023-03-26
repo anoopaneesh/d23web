@@ -93,11 +93,11 @@ const Proshow = () => {
                                                 : " linear-gradient(45deg, transparent 5%, var(--c_red) 5%)", color: "white", boxShadow: "6px 0 0 var(--heading)",
 
                                         }}>Back</button></div>
-                                        <a href="/tickets" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                                        {/* <a href="/tickets" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                             background
                                                 : `linear-gradient(45deg, transparent 5%, ${selected.button_bg} 5%)`, color: selected.button_text, boxShadow: `6px 0 0 ${selected.day === 3 ? 'white' : 'var(--c_red)'}`,
 
-                                        }}>Register</button></a>
+                                        }}>Register</button></a> */}
                                     </div>
                                 </div>
                             </div>
