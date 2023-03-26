@@ -114,7 +114,7 @@ export default Tickets
 
 
 
-
+// check
 {/* <div className='bg-heading w-[600px] h-64 p-1 flex flex-col relative'>
 <div className='uppercase text-black relative'>
     <p className='font-bold origin-right rotate-90'>day 1</p>
