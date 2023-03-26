@@ -20,7 +20,24 @@ const Tickets = () => {
     return (
         <div>
             <Navbar />
-            <div className='pt-28 md:pt-40 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
+            <div className='uppercase text-white text-[10px] md:text-[13px] text-bold fixed w-[100vw] h-[38px] grid place-items-center z-10 bg-[#300C] border-b border-t border-[#F00] backdrop-blur-xl md:mt-24 mt-[80px] shad overflow-hidden'>
+                <div className='flex row gap-8 place-items-center h-[38px]'>
+                    <p>25% OFF on all passes for workshop attendees</p>
+                    <div className='grid place-items-center h-[38px] w-[38px] border border-green-400'>
+                        <div className=' border-[1.5px] border-white rounded-full lowercase w-[16px] h-[16px] grid place-items-center'>
+                            <p className='md:-translate-y-[4px] -translate-y-[3px] text-sm'>i</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='h-[100px] w-full'>
+                    <p>This offer is applicable on tickets booked from venue</p>
+                    <p>Steps to redeem offer</p>
+                    <p>1. Grab your workshop ticket</p>
+                    <p>2. Submit your workshop ticket during the event</p>
+                    <p>3. Claim 25% OFF on any pass</p>
+                </div>
+            </div>
+            <div className='pt-28 md:pt-48 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
                 <div className='w-10/12 md:w-2/3 m-auto'>
                     <div className='flex flex-col md:flex-row gap-5 h-[50vh] md:h-auto'>
                         <img src={golden_pass} alt="" className='self-end justify-self-end md:w-[70%] ' />
@@ -101,6 +118,8 @@ const Tickets = () => {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
             </div>
