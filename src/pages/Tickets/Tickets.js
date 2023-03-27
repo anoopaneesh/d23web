@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
 import pattern2 from '../../assets/svg/Pattern2.svg'
-import golden_pass from '../../assets/svg/Golden_Pass.svg'
+import golden_pass from '../../assets/svg/GOLDEN_PASS_2.svg'
 import Navbar from '../../components/Navbar/Navbar'
 import { useNavContext } from '../../context/NavContext'
 import { useFirebaseContext } from '../../context/FirebaseContext'
 import Footer from '../../components/Footer/Footer'
-import day1_bg from '../../assets/jpeg/Wallpapers/Wallpaper_9.png'
+import day1_bg from '../../assets/svg/DAY_PASS_BG_1.svg'
+import day2_bg from '../../assets/svg/DAY_PASS_BG_2.svg'
+import day3_bg from '../../assets/svg/DAY_PASS_BG_3.svg'
 
 const Tickets = () => {
     const { changeCurrentPage } = useNavContext()
@@ -50,7 +52,7 @@ const Tickets = () => {
             <div className='pt-40 md:pt-52 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
                 <div className='w-10/12 md:w-2/3 m-auto'>
                     <div className='flex flex-col md:flex-row gap-5 h-[50vh] md:h-auto'>
-                        <img src={golden_pass} alt="" className='self-end justify-self-end md:w-[70%] ' />
+                        <img src={golden_pass} alt="" className='self-end justify-self-end md:w-[70%] no_drag ' />
                         <div className='flex-1 flex justify-between flex-row md:flex-col md:justify-end'>
                             {/* <p className='uppercase font-bold text-3xl'>golden pass</p> */}
                             <div className='text-[16px] md:text-xl'>
@@ -80,7 +82,12 @@ const Tickets = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='w-full md:h-64 flex flex-col md:flex-row gap-5 md:mt-5'>
+
+
+
+
+                    {/* ---------------------------------------------------------SECTION PREV-------------------------------------- */}
+                    {/* <div className='w-full md:h-64 flex flex-col md:flex-row gap-5 md:mt-5'>
                         <div className='w-full md:w-1/3 p-4 flex flex-col justify-between md:h-[50%] pb-2 pr-4  border border-heading day_pass relative'>
                             <div className='w-full h-full absolute top-0 left-0 z-0'>
                                 <img src={day1_bg} alt="" className='w-full h-full object-cover brightness-[20%] contrast-[103%] z-0' />
@@ -129,8 +136,51 @@ const Tickets = () => {
                                 }}>Book Now</button></a>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
+                    {/* --------------------------------------------------SECTION 2------------------------------------------------------------- */}
+
+
+
+
+                    <div className='w-full md:auto flex flex-col md:flex-row gap-5 md:mt-5'>
+                        <div className='flex flex-col h-auto w-full'>
+                            <div className='h-auto w-full'>
+                                <img src={day1_bg} className='no_drag'></img>
+                            </div>
+                            <div className='self-end -translate-y-[65%] -translate-x-[15%]'>
+                                <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-1" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                                    background
+                                        : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
+
+                                }}>Book Now</button></a>
+                            </div>
+                        </div>
+                        <div className='flex flex-col h-auto w-full'>
+                            <div className='h-auto w-full'>
+                                <img src={day2_bg} className='no_drag'></img>
+                            </div>
+                            <div className='self-end -translate-y-[60%] -translate-x-[15%]'>
+                                <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-2" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                                    background
+                                        : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
+
+                                }}>Book Now</button></a>
+                            </div>
+                        </div>
+                        <div className='flex flex-col h-auto w-full'>
+                            <div className='h-auto w-full'>
+                                <img src={day3_bg} className='no_drag'></img>
+                            </div>
+                            <div className='self-end -translate-y-[60%] -translate-x-[15%]'>
+                                <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-3" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                                    background
+                                        : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
+
+                                }}>Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 

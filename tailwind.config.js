@@ -22,6 +22,9 @@ module.exports = {
         hindi: ['Tiro Devanagari Hindi', 'sans-serif'],
         tamil: ['Noto Sans Tamil', 'sans-serif']
 
+      },
+      backgroundImage: {
+        daypass_bg: "url(./assets/svg/DAY_PASS_BG.svg)"
       }
     },
   },
