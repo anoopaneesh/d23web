@@ -77,7 +77,7 @@ const Tickets = () => {
                                         background
                                             : `linear-gradient(45deg, transparent 5%, #FFD700 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                    }}>Book Now</button></a>
+                                    }}>Buy Now</button></a>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@ const Tickets = () => {
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Book Now</button></a>
+                                }}>Buy Now</button></a>
                             </div>
                         </div>
                         <div className='w-full md:w-1/3 p-4 flex flex-col justify-between md:h-[50%] pb-2 mt-4 md:mt-0 border border-heading day_pass relative bg-[#111]'>
@@ -117,7 +117,7 @@ const Tickets = () => {
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Book Now</button></a>
+                                }}>Buy Now</button></a>
                             </div>
                         </div>
                         <div className='w-full md:w-1/3 p-4 flex flex-col justify-between md:h-[50%] pb-2 pr-4 mt-4 md:mt-0 border border-heading day_pass relative bg-[#111]'>
@@ -133,7 +133,7 @@ const Tickets = () => {
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Book Now</button></a>
+                                }}>Buy Now</button></a>
                             </div>
                         </div>
                     </div> */}
@@ -153,7 +153,7 @@ const Tickets = () => {
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Book Now</button></a>
+                                }}>Buy Now</button></a>
                             </div>
                         </div>
                         <div className='flex flex-col h-auto w-full'>
@@ -165,7 +165,7 @@ const Tickets = () => {
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Book Now</button></a>
+                                }}>Buy Now</button></a>
                             </div>
                         </div>
                         <div className='flex flex-col h-auto w-full'>
@@ -177,7 +177,7 @@ const Tickets = () => {
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
-                                }}>Book Now</button></a>
+                                }}>Buy Now</button></a>
                             </div>
                         </div>
                     </div>
