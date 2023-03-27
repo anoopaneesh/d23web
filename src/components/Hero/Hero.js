@@ -64,7 +64,7 @@ const Hero = ({ openEasterEgg }) => {
       <div className='relative top-0 overflow-hidden z-2 h-screen pt-8 md:pt-32'>
         {/* <video src={intro_vid} playsInline autoplay="autoplay" muted loop="loop" className="absolute top-0 w-full h-full object-cover object-left-top" alt="" /> */}
         <img src={wallpaper} className="absolute top-0 w-full h-full object-cover object-left-top contrast-[110%] brightness-50" alt="" />
-        <div className='bg-[rgba(0,0,0,.5)] w-full h-full absolute top-0'></div>
+        <div className='bg-[rgba(0,0,0,.2)] w-full h-full absolute top-0'></div>
 
 
         <div className='flex flex-col items-center space-y-[3vh] justify-center mt-[8vh] md:mt-0 h-[70%] md:h-[100%]'>
