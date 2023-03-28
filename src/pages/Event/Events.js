@@ -82,8 +82,8 @@ const Events = () => {
       <Navbar />
 
       <div className='grid place-items-center duration-150 font-chakra drawer uppercase text-white text-[10px] md:text-[13px] text-bold fixed w-[100vw] h-[38px] z-10 bg-[#012] border-b border-t border-heading backdrop-blur-xl md:mt-24 mt-[80px] shad overflow-hidden'>
-        <div className='hidden h-[100%] md:flex justify-between items-center w-4/5 md:w-1/3'>
-          <div className='w-[80%] translate-y-[2px] md:translate-y-0'>
+        <div className='hidden h-[100%] md:flex justify-center items-center w-4/5 md:w-1/2'>
+          <div className='translate-y-[2px] md:translate-y-0 pr-4'>
             <p className=''>Enroll for one event per day for all three days for just &#8377;350!</p>
           </div>
           <div className='grid place-items-center h-[38px]'>
