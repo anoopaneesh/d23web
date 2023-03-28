@@ -196,7 +196,7 @@ const Tickets = () => {
                                 <img src={tech_pack_m} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
                             <div className='self-end -translate-y-[30%] -translate-x-[5%]'>
-                                <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-3" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                                <a href="https://www.yepdesk.com/tech-event-package" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
 
