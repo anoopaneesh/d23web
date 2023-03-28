@@ -17,6 +17,8 @@ import Footer from '../../components/Footer/Footer'
 import { useFirebaseContext } from '../../context/FirebaseContext'
 import ProShowModal from '../../components/ProShowModal/ProShowModal'
 import { AnimatePresence } from 'framer-motion'
+import tech_pack from '../../assets/svg/TECH_PACK.svg'
+import tech_pack_m from '../../assets/svg/TECH_PACK_M.svg'
 
 
 
@@ -76,8 +78,25 @@ const Events = () => {
           </div>
         </ProShowModal>}
       </AnimatePresence>
+      {/* ----------------------------------------------------------------NAVBAR-------------------------------------------------------- */}
       <Navbar />
-      <div className='min-h-screen pb-52 font-chakra about pt-32 w-11/12 m-auto'>
+
+      <div className='grid place-items-center duration-150 font-chakra drawer uppercase text-white text-[10px] md:text-[13px] text-bold fixed w-[100vw] h-[38px] z-10 bg-[#012] border-b border-t border-heading backdrop-blur-xl md:mt-24 mt-[80px] shad overflow-hidden'>
+        <div className='hidden h-[100%] md:flex justify-between items-center w-4/5 md:w-1/3'>
+          <div className='w-[80%] translate-y-[2px] md:translate-y-0'>
+            <p className=''>Enroll for one event per day for all three days for just &#8377;350!</p>
+          </div>
+          <div className='grid place-items-center h-[38px]'>
+            <a href='https://www.yepdesk.com/tech-event-package' className='border-l border-r border-[#02d7f230] hover:border-heading hover:bg-[#02d7f230] hover:border-l hover:border-r text-sm hover:cursor-pointer w-[120px] h-[38px] grid place-items-center'>BUY&nbsp;TICKET</a>
+          </div>
+        </div>
+        <div className='md:hidden flex items-center w-[100vw]'>
+          <marquee scrollamount='6' scrollDelay='0' className='w-full'><p className='text-base'>Enroll for all of the 30+ technical events for just &#8377;350!</p></marquee>
+
+        </div>
+      </div>
+
+      <div className='min-h-screen pb-4 font-chakra about pt-32 w-11/12 m-auto'>
 
 
         <div className="h-10 w-full"></div>
@@ -126,6 +145,35 @@ const Events = () => {
         </div>
         {/* <h2 className='text-2xl mb-8'>DAY 1</h2><span>31/03/2023</span></div> */}
       </div>
+
+
+
+      {/* ---------------TECH PACK-------------- */}
+
+      <div className='flex justify-center pb-8'>
+        <div className='flex flex-col h-auto w-4/5'>
+          <div className='hidden md:block h-auto w-full'>
+            <img src={tech_pack} className='no_drag'></img>
+          </div>
+          <div className='block md:hidden h-auto w-full'>
+            <img src={tech_pack_m} className='no_drag'></img>
+          </div>
+          <div className='self-end -translate-y-[30%] -translate-x-[5%]'>
+            <a href="https://www.yepdesk.com/tech-event-package" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+              background
+                : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
+
+            }}>Buy Now</button></a>
+          </div>
+          <div className='md:-translate-y-[130%] text-[#FFF] pb-4'>
+            <p>Enroll for one event per day for all three days for just &#8377;350!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* -------------TECH PACK ENDS------------ */}
+
       <Footer />
     </>
   )
