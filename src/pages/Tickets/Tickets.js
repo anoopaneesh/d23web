@@ -9,6 +9,8 @@ import Footer from '../../components/Footer/Footer'
 import day1_bg from '../../assets/svg/DAY_PASS_BG_1.svg'
 import day2_bg from '../../assets/svg/DAY_PASS_BG_2.svg'
 import day3_bg from '../../assets/svg/DAY_PASS_BG_3.svg'
+import tech_pack from '../../assets/svg/TECH_PACK.svg'
+import tech_pack_m from '../../assets/svg/TECH_PACK_M.svg'
 
 const Tickets = () => {
     const { changeCurrentPage } = useNavContext()
@@ -35,7 +37,7 @@ const Tickets = () => {
             <div className='duration-150 font-chakra drawer uppercase text-white text-[10px] md:text-[13px] text-bold fixed w-[100vw] h-[38px] grid place-items-center z-10 bg-[#200C] border-b border-t border-[#F00] backdrop-blur-xl md:mt-24 mt-[80px] shad overflow-hidden'>
                 <div className='flex row gap-8 place-items-center h-[38px]'>
                     <p><span className='font-bold'>25% OFF</span> on all passes for workshop attendees</p>
-                    <div onClick={changeHeight} className='grid place-items-center h-[38px] w-[38px] hover:scale-[1.2] text-[#F00] duration-200 hover:cursor-pointer'>
+                    <div onClick={changeHeight} className='hover:bg-[#400a] grid place-items-center h-[38px] w-[38px] hover:scale-[1.2] text-[#F00] duration-200 hover:cursor-pointer'>
                         <div className=' border-[1px] border-red rounded-full lowercase w-[16px] h-[16px] grid place-items-center border-[#F00]'>
                             <p className='md:-translate-y-[3px] -translate-y-[3px] text-sm'>i</p>
                         </div>
@@ -52,7 +54,7 @@ const Tickets = () => {
             <div className='pt-40 md:pt-52 pb-32 text-white font-chakra min-h-screen grid place-items-center'>
                 <div className='w-10/12 md:w-2/3 m-auto'>
                     <div className='flex flex-col md:flex-row gap-5 h-[50vh] md:h-auto'>
-                        <img src={golden_pass} alt="" className='self-end justify-self-end md:w-[70%] no_drag ' />
+                        <img src={golden_pass} alt="" className='self-end justify-self-end md:w-[70%] no_drag hover:scale-[1.005] hover:brightness-[105%] hover:contrast-125 duration-200' />
                         <div className='flex-1 flex justify-between flex-row md:flex-col md:justify-end'>
                             {/* <p className='uppercase font-bold text-3xl'>golden pass</p> */}
                             <div className='text-[16px] md:text-xl'>
@@ -143,10 +145,10 @@ const Tickets = () => {
 
 
 
-                    <div className='w-full md:auto flex flex-col md:flex-row gap-5 md:mt-5'>
+                    <div className='w-full md:auto flex flex-col md:flex-row gap-5 md:gap-8 md:mt-8'>
                         <div className='flex flex-col h-auto w-full'>
                             <div className='h-auto w-full'>
-                                <img src={day1_bg} className='no_drag'></img>
+                                <img src={day1_bg} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
                             <div className='self-end -translate-y-[65%] -translate-x-[15%]'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-1" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
@@ -158,7 +160,7 @@ const Tickets = () => {
                         </div>
                         <div className='flex flex-col h-auto w-full'>
                             <div className='h-auto w-full'>
-                                <img src={day2_bg} className='no_drag'></img>
+                                <img src={day2_bg} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
                             <div className='self-end -translate-y-[60%] -translate-x-[15%]'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-2" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
@@ -170,7 +172,7 @@ const Tickets = () => {
                         </div>
                         <div className='flex flex-col h-auto w-full'>
                             <div className='h-auto w-full'>
-                                <img src={day3_bg} className='no_drag'></img>
+                                <img src={day3_bg} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
                             <div className='self-end -translate-y-[60%] -translate-x-[15%]'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-3" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
@@ -182,7 +184,36 @@ const Tickets = () => {
                         </div>
                     </div>
 
+
+                    {/* ---------------TECH PACK-------------- */}
+
+                    <div>
+                        <div className='mt-14 md:mt-0 flex flex-col h-auto w-full'>
+                            <div className='hidden md:block h-auto w-full'>
+                                <img src={tech_pack} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
+                            </div>
+                            <div className='block md:hidden h-auto w-full'>
+                                <img src={tech_pack_m} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
+                            </div>
+                            <div className='self-end -translate-y-[30%] -translate-x-[5%]'>
+                                <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-3" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                                    background
+                                        : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
+
+                                }}>Buy Now</button></a>
+                            </div>
+                            <div className='md:-translate-y-[200%]'>
+                                <p>Enroll for one event per day for all three days for just &#8377;350!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* -------------TECH PACK ENDS------------ */}
+
                 </div>
+
+
 
             </div>
             <Footer />
