@@ -3,7 +3,9 @@ import './style.css'
 import no_image from '../../assets/jpeg/No_Image.png'
 const insta = {
     "Anoop P K":"https://instagram.com/ichbin_anoop",
-    "ShyamKrishnan S N":"https://instagram.com/shhyaaam"
+    "ShyamKrishnan S N":"https://instagram.com/shhyaaam",
+    "Alan T A":"https://instagram.com/alan_ta_335",
+    "Akhil Krishna S":"http://Instagram.com/ilmentore72"
 }
 function handleClick(item){
     if(Object.keys(insta).includes(item.name)){
