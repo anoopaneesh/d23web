@@ -17,6 +17,7 @@ import Loading from './pages/Loading/Loading';
 import Tickets from './pages/Tickets/Tickets';
 import Accomodation from './pages/Accomodation/Accomodation';
 import Team from './pages/Team/Team';
+import E404 from './pages/404/E404'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
   {
     path: "/error",
     element: <Error />
+  },
+  {
+    path: "/404",
+    element: <E404 />
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
