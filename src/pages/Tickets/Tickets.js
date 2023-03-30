@@ -25,10 +25,10 @@ const Tickets = () => {
 
     const changeHeight = () => {
         let El = document.querySelector('.drawer');
-        if (El.style.height == '38px') {
-            El.style.height = '220px';
+        if (El.style.height == '220px') {
+            El.style.height = '38px';
         }
-        else El.style.height = '38px';
+        else El.style.height = '220px';
     }
 
     return (
