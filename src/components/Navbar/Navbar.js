@@ -60,7 +60,7 @@ function Navbar() {
             <a href="/proshows" className={`no_drag select-none ${currentColor('proshows')}`}>Proshows</a>
             <a href="/tickets" className={`no_drag select-none ${currentColor('tickets')}`}>Tickets</a>
             <a href="/accomodation" className={`no_drag select-none ${currentColor('accomodation')}`}>Accomodation</a>
-            <a href="/teams" className={`no_drag select-none ${currentColor('teams')}`}>Team</a>
+            {/* <a href="/teams" className={`no_drag select-none ${currentColor('teams')}`}>Team</a> */}
           </div>
         </motion.div>}</AnimatePresence>
       <nav className={`${currentScroll > 50 && 'md:bg-[#000b] md:backdrop-blur-2xl backdrop-blur-xl bg-[#0007] border-b-[1px] border-[#0ff2] shad'} z-10 bg-gradient-to-b from-transparent_black via-[#0005] to-transparent top-0 navbar flex justify-center text-foreground text-lg uppercase space-x-20 items-center pt-10 pb-10 fixed w-full`}>
@@ -75,7 +75,7 @@ function Navbar() {
           <a href="/proshows" className={`no_drag select-none ${currentColor('proshows')}`}>Proshows</a>
           <a href="/tickets" className={`no_drag select-none ${currentColor('tickets')}`}>Tickets</a>
           <a href="/accomodation" className={`no_drag select-none ${currentColor('accomodation')}`}>Accomodation</a>
-          <a href="/teams" className={`no_drag select-none ${currentColor('teams')}`}>Team</a>
+          {/* <a href="/teams" className={`no_drag select-none ${currentColor('teams')}`}>Team</a> */}
         </div>
       </nav>
     </>
