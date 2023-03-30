@@ -1,0 +1,43 @@
+.member_container {
+    background: var(--heading);
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.member_container:hover {
+    background-color: white;
+}
+
+.member_container .inner {
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    background: black;
+    overflow: hidden;
+}
+
+.member_container .inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.3s ease-in-out;
+}
+
+.member_container .inner img:hover {
+    scale: 1.02;
+    cursor: default;
+}
+
+.outer {
+    width:500px;
+    height: 500px;
+    background: var(--heading);
+    position: absolute;
+    top: 50px;
+    left: 0px;
+}
+
+.member_container .clip_path {
+    -webkit-clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
+    clip-path: polygon(0% 100%, 0% 0%, 92% 0, 100% 8%, 100% 100%);
+}

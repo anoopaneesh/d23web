@@ -17,14 +17,26 @@ const FirebaseContext = React.createContext({})
 
 const FirebaseProvider = ({ children }) => {
 
-    const [generalEvents, setGeneralEvents] = useState({ day1: [], day2: [], day3: [] })
-
 
     
 
     useEffect(() => {
 
     }, [])
+
+    async function getTeamData(){
+        return new Promise(async(resolve,reject)=>{
+            let teams = []
+            const pquery = query(collection(db, `team`));
+            const querySnapshot = await getDocs(pquery)
+            querySnapshot.forEach((doc) => {
+                teams.push(doc.data())
+            })
+            resolve(teams)
+
+        })
+    }
+
     async function getProshowData() {
         return new Promise(async (resolve, reject) => {
             let listdata = []
@@ -118,7 +130,7 @@ const FirebaseProvider = ({ children }) => {
 
 
 
-    return <FirebaseContext.Provider value={{ getGeneralEvents, getDaysData, getProshowData, getAllWorkshops }}>
+    return <FirebaseContext.Provider value={{ getGeneralEvents, getDaysData, getProshowData, getAllWorkshops , getTeamData }}>
         {children}
     </FirebaseContext.Provider>
 }

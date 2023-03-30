@@ -16,6 +16,7 @@ import Proshow from './pages/Proshow/Proshow';
 import Loading from './pages/Loading/Loading';
 import Tickets from './pages/Tickets/Tickets';
 import Accomodation from './pages/Accomodation/Accomodation';
+import Team from './pages/Team/Team';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/accomodation",
     element: <Accomodation />
+  },
+  {
+    path: "/teams",
+    element: <Team />
   },
   {
     path: "/dept/:id",
