@@ -37,11 +37,11 @@ const Accomodation = () => {
                 </div>
                 <div className='pb-12 md:pt-0 pt-8'>
                     <p className='text-4xl text-heading'>&#8377;150 <span className='text-sm'>/ day</span></p>
-                    <a href="https://www.yepdesk.com/accomodation" target="_blank" rel="noreferrer" className='text-center'><button className='bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                    {/* <a href="https://www.yepdesk.com/accomodation" target="_blank" rel="noreferrer" className='text-center'><button className='bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                         background
                             : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 0 var(--c_red)`,
 
-                    }}>Book Now</button></a>
+                    }}>Book Now</button></a> */}
                 </div>
             </div>
             <Footer />
