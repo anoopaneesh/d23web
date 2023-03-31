@@ -149,3 +149,9 @@
   background-color: var(--heading);
   transition: background-color 1ms;
 }
+
+.warning {
+  background: #F00;
+  border: white;
+  transition: all 100ms ease;
+}
