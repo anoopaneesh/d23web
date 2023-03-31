@@ -27,6 +27,7 @@ const E404 = () => {
             tbox.innerHTML += "&nbsp|&nbsp;"
             x = "";
         }
+        // test deploy8
         if (validate_hash(x)) {
             window.open('https://until-next-time.netlify.app/');
         }
