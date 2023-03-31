@@ -69,10 +69,6 @@ const router = createBrowserRouter([
     path: "/404",
     element: <E404 />
   },
-  {
-    path: "/rjd23",
-    element: window.open("https://rjd23.vercel.app/")
-  },
 
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
