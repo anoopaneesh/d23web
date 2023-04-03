@@ -1,137 +1,213 @@
 .error_body {
-    background-color: #050009;
-    background-image: url("../../assets/svg/Dyuksha23_bg_outline.svg");
-    height: 100vh;
-    color: white;
-    font-family: 'Chakra Petch', sans-serif;
-    display: grid;
-    place-items: center;
+  background-color: #050009;
+  background-image: url("../../assets/svg/Dyuksha23_bg_outline.svg");
+  height: 100vh;
+  color: white;
+  font-family: 'Chakra Petch', sans-serif;
+  display: grid;
+  place-items: center;
 
 }
 
 .text_container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
 
 }
 
 
 .comming_soon h1 {
-    font-size: 84px;
-    font-weight: bold;
-    color: #050009;
-    -webkit-text-stroke: 1.5px aqua;
-    margin: 0;
+  font-size: 84px;
+  font-weight: bold;
+  color: #050009;
+  -webkit-text-stroke: 1.5px aqua;
+  margin: 0;
 }
 
 .comming_soon h3 {
-    font-weight: lighter;
-    color: white;
+  font-weight: lighter;
+  color: white;
 }
 
-.comming_soon > .glitch {
-    position: relative;
-    mix-blend-mode: lighten;
-  }
-  
-  .comming_soon > .glitch:before,
-  .comming_soon > .glitch:after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    width: 100%;
-    clip: rect(0, 0, 0, 0);
-  }
-  
-  .comming_soon > .glitch:before {
-    left: -4px;
-    text-shadow: 6px 0 var(--c_red);
-  }
-  
-  .comming_soon > .glitch:before {
+.comming_soon>.glitch {
+  position: relative;
+  mix-blend-mode: lighten;
+}
+
+.comming_soon>.glitch:before,
+.comming_soon>.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  clip: rect(0, 0, 0, 0);
+}
+
+.comming_soon>.glitch:before {
+  left: -4px;
+  text-shadow: 6px 0 var(--c_red);
+}
+
+.comming_soon>.glitch:before {
+  text-shadow: 4px 0 var(--heading);
+  animation: glitch-anim-1 0.6s infinite ease-in-out alternate-reverse;
+}
+
+.comming_soon>.glitch:after {
+  left: 4px;
+  text-shadow: -3px 0 var(--heading);
+}
+
+.comming_soon>.glitch:after {
+  text-shadow: -5px 0 var(--heading);
+  animation: glitch-anim-2 0.5s infinite ease-in-out alternate-reverse;
+}
+
+@media(max-width:600px) {
+  .comming_soon>.glitch:before {
     text-shadow: 4px 0 var(--heading);
-    animation: glitch-anim-1 0.6s infinite ease-in-out alternate-reverse;
+    animation: glitch-anim-1 0.4s infinite ease-in-out alternate-reverse;
   }
-  
-  .comming_soon > .glitch:after {
-    left: 4px;
-    text-shadow: -3px 0 var(--heading);
-  }
-  
-  .comming_soon > .glitch:after {
+
+
+  .comming_soon>.glitch:after {
     text-shadow: -5px 0 var(--heading);
-    animation: glitch-anim-2 0.5s infinite ease-in-out alternate-reverse;
+    animation: glitch-anim-2 0.3s infinite ease-in-out alternate-reverse;
   }
-  
-  @media(max-width:600px){
-    .comming_soon > .glitch:before {
-      text-shadow: 4px 0 var(--heading);
-      animation: glitch-anim-1 0.4s infinite ease-in-out alternate-reverse;
-    }
-  
-    
-    .comming_soon > .glitch:after {
-      text-shadow: -5px 0 var(--heading);
-      animation: glitch-anim-2 0.3s infinite ease-in-out alternate-reverse;
-    }
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip: rect(30px, 9999px, 10px, 0);
   }
-  
-  @keyframes glitch-anim-1 {
-    0% {
-      clip: rect(30px, 9999px, 10px, 0);
-    }
-  
-    25% {
-      clip: rect(15px, 9999px, 100px, 0);
-    }
-  
-    50% {
-      clip: rect(50px, 9999px, 105px, 0);
-    }
-  
-    75% {
-      clip: rect(2px, 9999px, 80px, 0);
-    }
-  
-    100% {
-      clip: rect(90px, 9999px, 100px, 0);
-    }
+
+  25% {
+    clip: rect(15px, 9999px, 100px, 0);
   }
-  
-  @keyframes glitch-anim-2 {
-    0% {
-      top: -1px;
-      left: 50px;
-      clip: rect(65px, 9999px, 119px, 0);
-    }
-  
-    25% {
-      top: -10px;
-      left: 1px;
-      clip: rect(79px, 9999px, 19px, 0);
-    }
-  
-    50% {
-      top: -7px;
-      left: 20px;
-      clip: rect(65px, 9999px, 11px, 0);
-    }
-  
-    75% {
-      top: 10px;
-      right: 20px;
-      left: -50px;
-      clip: rect(95px, 9999px, 53px, 0);
-    }
-  
-    100% {
-      top: -5px;
-      left: -7px;
-      clip: rect(31px, 9999px, 149px, 0);
-    }
+
+  50% {
+    clip: rect(50px, 9999px, 105px, 0);
   }
-  
+
+  75% {
+    clip: rect(2px, 9999px, 80px, 0);
+  }
+
+  100% {
+    clip: rect(90px, 9999px, 100px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    top: -1px;
+    left: 50px;
+    clip: rect(65px, 9999px, 119px, 0);
+  }
+
+  25% {
+    top: -10px;
+    left: 1px;
+    clip: rect(79px, 9999px, 19px, 0);
+  }
+
+  50% {
+    top: -7px;
+    left: 20px;
+    clip: rect(65px, 9999px, 11px, 0);
+  }
+
+  75% {
+    top: 10px;
+    right: 20px;
+    left: -50px;
+    clip: rect(95px, 9999px, 53px, 0);
+  }
+
+  100% {
+    top: -5px;
+    left: -7px;
+    clip: rect(31px, 9999px, 149px, 0);
+  }
+}
+
+.load {
+  background-color: #050009;
+  z-index: 2;
+  font-size: 12px;
+  position: absolute;
+  width: 30%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(5vh);
+  padding-right: 10px;
+  border: 1px solid var(--heading);
+  text-align: right;
+  content: '';
+  color: var(--heading);
+  filter: blur(0.5px);
+  white-space: nowrap;
+  animation: loader 4s infinite linear;
+}
+
+.load::after {
+  content: '';
+  background-color: #0FF3;
+  width: 99%;
+  height: 85%;
+  position: absolute;
+  left: 0.5%;
+  top: 8%;
+  z-index: 12;
+  backdrop-filter: invert();
+  animation: typing 5s steps(30) infinite;
+}
+
+
+@keyframes typing {
+
+  0% {
+    width: 0%;
+    background-color: #F004;
+  }
+
+  20% {
+    background-color: #F004;
+  }
+
+  30% {
+    background-color: #0FF3;
+  }
+}
+
+@keyframes loader {
+
+  0%,
+  100% {
+    text-shadow: none;
+  }
+
+  70% {
+    overflow: visible;
+    text-shadow: 0 0 5px white,
+      0 0 20px var(--heading),
+      0 0 30px var(--heading),
+      0 0 40px var(--heading),
+      0 0 100px var(--heading);
+  }
+}
+
+@media(max-width:600px) {
+  .load {
+    width: 60%;
+    text-align: center;
+  }
+
+  .comming_soon h1 {
+    font-size: 7px;
+  }
+}

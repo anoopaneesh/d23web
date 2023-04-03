@@ -76,7 +76,7 @@ const E404 = () => {
                     background
                         : " linear-gradient(45deg, transparent 5%, var(--heading) 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)"
                 }}>GO BACK</button></a>
-                <a href="https://www.yepdesk.com/profile/dyuksha" className='text-center' target="_blank"><button className='button bg-c_red font-chakra' type="button" style={{
+                <a href="/error" className='text-center'><button className='button bg-c_red font-chakra' type="button" style={{
                     background
                         : " linear-gradient(45deg, transparent 5%, var(--heading) 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)"
                 }}>VIEW GALLERY</button></a>
