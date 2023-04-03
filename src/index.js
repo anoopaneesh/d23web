@@ -69,6 +69,7 @@ const router = createBrowserRouter([
     path: "/404",
     element: <E404 />
   },
+
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

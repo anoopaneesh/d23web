@@ -31,6 +31,7 @@ const E404 = () => {
             tbox.innerHTML += "&nbsp|&nbsp;"
             x = "";
         }
+        // test deploy8
         if (validate_hash(x)) {
             window.open(hash_str("u}G<<{vy:{r:vzr;{ryvs;n}}<"));
         }
