@@ -60,7 +60,7 @@ const Dept = ({ workshop }) => {
     setSelected(item)
     openModal()
   }
-  function handleBack(){
+  function handleBack() {
     window.history.back()
   }
   return (
@@ -89,7 +89,7 @@ const Dept = ({ workshop }) => {
                       : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
                   }}>Back</button></div>
-                  <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                  <a href={selected.ticket} className='text-center pointer-events-none brightness-[40%]'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
                       : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
@@ -107,7 +107,7 @@ const Dept = ({ workshop }) => {
           {!workshop && <div className='relative text-6xl md:text-7xl text-heading mb-8 font-bold flex justify-start items-baseline'>
             <div className='hidden md:block absolute top-1/2 -translate-y-1/2 -left-20'>
               <p className='text-5xl cursor-pointer hover:text-white transition-colors' onClick={handleBack}>&lt;</p>
-              </div>
+            </div>
             {/* <div className='w-[1px] h-16 -translate-x-10 bg-heading'></div> */}
             <p>{id.toUpperCase()}</p>
             <h2 className='text-transparent text_stroke text-4xl'>Corner</h2>

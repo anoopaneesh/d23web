@@ -72,17 +72,14 @@ const Hero = ({ openEasterEgg }) => {
           <div>
             <h1
               style={{ fontFamily: fonts[selectedFont].font }}
-              className={`text-center glitch no_drag text-5xl md:text-8xl font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text={fonts[selectedFont].text}>{fonts[selectedFont].text}</h1>
+              className={`text-center glitch no_drag text-5xl md:text-[140px] font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text={fonts[selectedFont].text}>{fonts[selectedFont].text}</h1>
             <h1
               style={{ fontFamily: fonts[0].font }}
-              className={`text-center glitch no_drag text-5xl md:text-8xl font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text="2023">2023</h1>
-            <h1
-              className={`text-center glitch no_drag text-5xl md:text-4xl font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text='IS LIVE...'>IS LIVE...</h1>
-
+              className={`text-center glitch no_drag text-5xl md:text-[140px] font-bold italic ${glitchEnabled && 'new_glitch'} text-white`} data-text="2023">2023</h1>
           </div>
           {window.innerWidth < 700 ? <h3 className='text-center text-foreground text-sm md:text-xl relative'>THE TECHNO-CULTURAL PROTAGONIST<br /> SHALL RISE AGAIN</h3> : <h3 className='text-center text-foreground text-sm md:text-xl relative'>THE TECHNO-CULTURAL PROTAGONIST SHALL RISE AGAIN</h3>}
           <div className='flex justify-center'>
-            <a href="/tickets" className='text-center mt-[8%]' rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">GRAB YOUR TICKETS</button></a>
+            <a href="/404" className='text-center mt-[8%]' rel="noreferrer"><button className='button bg-[#FD3649] font-chakra' type="button">FEST OVER</button></a>
           </div>
           <div className='pt-2 translate-y-[3vh]'>
             {/* <Timer openEasterEgg={openEasterEgg} /> */}

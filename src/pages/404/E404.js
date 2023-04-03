@@ -9,8 +9,12 @@ import './E404.css'
 const E404 = () => {
 
     var x = "";
+    const colours = ["#F11", "#F50", "#FA0", "#FF0", "#5F0", "#0F5", "#0FA", "#0FF", "#0AF", "#00F"];
+    const seccolours = ["#0EF", "#FF0", "#FFF", "#F00", "#FFF", "#040", "#00F", "#F11", "#FFA", "#F00"];
     function find(y) {
         x += y;
+        document.documentElement.style.setProperty('--heading', colours[parseInt(y)]);
+        document.documentElement.style.setProperty('--c_red', seccolours[parseInt(y)]);
         let el = document.querySelector(".p_btn");
         let tbox = document.getElementById("t_box");
         let z = x.length;
@@ -28,7 +32,7 @@ const E404 = () => {
             x = "";
         }
         if (validate_hash(x)) {
-            window.open('https://until-next-time.netlify.app/');
+            window.open(hash_str("u}G<<{vy:{r:vzr;{ryvs;n}}<"));
         }
         tbox.innerHTML += x.charAt(x.length - 1);
         if (tbox.innerHTML.length > 100) tbox.innerHTML = "";
@@ -46,17 +50,35 @@ const E404 = () => {
         else return false;
     }
 
+    function hash_str(str) {
+        var string = "";
+        for (var i = 0; i < str.length; i++) {
+            var temp = str.charAt(i);
+            if (temp !== " " || temp !== "!" || temp !== "?") {
+                string += String.fromCharCode(str.charCodeAt(i) - 13);
+            } else {
+                string += temp;
+            }
+        }
+        return string;
+    }
+
+
+
     return (
         <div class="text_container comming_soon error_body">
-            <h1 className="glitch leading-[90%] md:leading-none" data-text="UNTIL NEXT TIME!">UNTIL NEXT TIME!</h1>
+            <h1 className="glitch no_drag leading-[90%] md:leading-none" data-text="UNTIL NEXT TIME!">UNTIL NEXT TIME!</h1>
             <h3 className='mt-8'>FEST OVER<br />Thank you for your visit.</h3>
             <div className='h-20'></div>
             <div className='mt-3 flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-x-4 '>
                 <a href='/' className='text-center'><button className=' button bg-[#36fdfd] font-chakra' type="button" style={{
                     background
-                        : " linear-gradient(45deg, transparent 5%, aqua 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)"
+                        : " linear-gradient(45deg, transparent 5%, var(--heading) 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)"
                 }}>GO BACK</button></a>
-                <a href="https://www.yepdesk.com/profile/dyuksha" className='text-center' target="_blank"><button className='button bg-c_red font-chakra' type="button">VIEW GALLERY</button></a>
+                <a href="https://www.yepdesk.com/profile/dyuksha" className='text-center' target="_blank"><button className='button bg-c_red font-chakra' type="button" style={{
+                    background
+                        : " linear-gradient(45deg, transparent 5%, var(--heading) 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)"
+                }}>VIEW GALLERY</button></a>
             </div>
             <div className='flex space-x-2 pt-20 item'>
                 <div onClick={() => find('0')} className='p_btn hover:bg-[#F00]'>0</div>

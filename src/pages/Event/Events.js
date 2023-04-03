@@ -66,7 +66,7 @@ const Events = () => {
                       : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
                   }}>Back</button></div>
-                  {selected.ticket != '' && <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                  {selected.ticket != '' && <a href={selected.ticket} className='text-center pointer-events-none brightness-50'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
                       : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
@@ -87,7 +87,7 @@ const Events = () => {
             <p className=''>Enroll for one event per day for all three days for just &#8377;350!</p>
           </div>
           <div className='grid place-items-center h-[38px]'>
-            <a href='https://www.yepdesk.com/tech-event-package' className='border-l border-r border-[#02d7f230] hover:border-heading hover:bg-[#02d7f230] hover:border-l hover:border-r text-sm hover:cursor-pointer w-[120px] h-[38px] grid place-items-center'>BUY&nbsp;TICKET</a>
+            <a href='/404' className='border-l border-r border-[#02d7f230] hover:border-heading hover:bg-[#02d7f230] hover:border-l hover:border-r text-sm hover:cursor-pointer w-[120px] h-[38px] grid place-items-center'>BUY&nbsp;TICKET</a>
           </div>
         </div>
         <div className='md:hidden flex items-center w-[100vw]'>
@@ -150,7 +150,7 @@ const Events = () => {
 
       {/* ---------------TECH PACK-------------- */}
 
-      <div className='flex justify-center pb-8'>
+      <div className='flex justify-center pb-8 brightness-[25%] pointer-events-none'>
         <div className='flex flex-col h-auto w-4/5'>
           <div className='hidden md:block h-auto w-full'>
             <img src={tech_pack} className='no_drag'></img>

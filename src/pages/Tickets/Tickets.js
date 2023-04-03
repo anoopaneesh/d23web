@@ -74,7 +74,7 @@ const Tickets = () => {
                                     <p><span className='text-3xl md:text-4xl text-[#FFD700]'>&#8377;1499</span></p>
                                     {/* <p className='text-[#FFD700] text-lg'>For workshop attendees</p> */}
                                 </div>
-                                <div>
+                                <div className='brightness-[40%] pointer-events-none'>
                                     <a href="https://www.yepdesk.com/dyuksha-festival-ticket-3-days" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                         background
                                             : `linear-gradient(45deg, transparent 5%, #FFD700 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
@@ -150,7 +150,7 @@ const Tickets = () => {
                             <div className='h-auto w-full'>
                                 <img src={day1_bg} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
-                            <div className='self-end -translate-y-[65%] -translate-x-[15%]'>
+                            <div className='self-end -translate-y-[65%] -translate-x-[15%] brightness-[40%] pointer-events-none'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-1" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
@@ -162,7 +162,7 @@ const Tickets = () => {
                             <div className='h-auto w-full'>
                                 <img src={day2_bg} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
-                            <div className='self-end -translate-y-[60%] -translate-x-[15%]'>
+                            <div className='self-end -translate-y-[60%] -translate-x-[15%] brightness-[40%] pointer-events-none'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-2" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
@@ -174,7 +174,7 @@ const Tickets = () => {
                             <div className='h-auto w-full'>
                                 <img src={day3_bg} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
-                            <div className='self-end -translate-y-[60%] -translate-x-[15%]'>
+                            <div className='self-end -translate-y-[60%] -translate-x-[15%] brightness-[40%] pointer-events-none'>
                                 <a href="https://www.yepdesk.com/dyuksha-live-proshow-night-day-3" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,
@@ -195,7 +195,7 @@ const Tickets = () => {
                             <div className='block md:hidden h-auto w-full'>
                                 <img src={tech_pack_m} className='no_drag hover:scale-[1.005] hover:brightness-125 duration-200'></img>
                             </div>
-                            <div className='self-end -translate-y-[30%] -translate-x-[5%]'>
+                            <div className='self-end -translate-y-[30%] -translate-x-[5%] brightness-[40%] pointer-events-none'>
                                 <a href="https://www.yepdesk.com/tech-event-package" target="_blank" rel="noreferrer" className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                                     background
                                         : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 var(--c_red)`,

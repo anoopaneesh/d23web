@@ -89,7 +89,7 @@ const Workshops = () => {
                       : " linear-gradient(45deg, transparent 5%, #ddd 5%)", color: "black", boxShadow: "6px 0 0 var(--c_red)",
 
                   }}>Back</button></div>
-                  <a href={selected.ticket} className='text-center'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                  <a href={selected.ticket} className='text-center pointer-events-none brightness-[40%]'><button className=' bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                     background
                       : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: "white", boxShadow: "6px 0 0 white",
 
