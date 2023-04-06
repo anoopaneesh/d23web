@@ -139,11 +139,9 @@
   background-color: #050009;
   z-index: 2;
   font-size: 12px;
-  position: absolute;
+  align-self: center;
+  justify-self: center;
   width: 30%;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(5vh);
   padding-right: 10px;
   border: 1px solid var(--heading);
   text-align: right;
@@ -156,7 +154,7 @@
 
 .load::after {
   content: '';
-  background-color: #0FF3;
+  background-color: var(--heading);
   width: 99%;
   height: 85%;
   position: absolute;
@@ -164,7 +162,7 @@
   top: 8%;
   z-index: 12;
   backdrop-filter: invert();
-  animation: typing 5s steps(30) infinite;
+  animation: typing 30s steps(50) infinite;
 }
 
 
@@ -172,15 +170,6 @@
 
   0% {
     width: 0%;
-    background-color: #F004;
-  }
-
-  20% {
-    background-color: #F004;
-  }
-
-  30% {
-    background-color: #0FF3;
   }
 }
 

@@ -31,13 +31,13 @@ const Accomodation = () => {
                 <div className='w-full'>
                     <p className='text-heading pb mt-4'>Contact</p>
                     <div className='mt-4 md:flex md:justify-between w-[30%]'>
-                        <p>Arjun&nbsp;(Men) <br />+91&nbsp;9400056465</p>
-                        <p className=' mt-4 md:mt-0'>Rasica&nbsp;(Women) <br /> +91&nbsp;9188074576</p>
+                        <p>Arjun&nbsp;(Men) <br />+91&nbsp;|||| || |||||| || || |||||</p>
+                        <p className=' mt-4 md:mt-0'>Rasica&nbsp;(Women) <br /> +91&nbsp;|||| ||||| ||| ||| || |||</p>
                     </div>
                 </div>
                 <div className='pb-12 md:pt-0 pt-8'>
                     <p className='text-4xl text-heading'>&#8377;150 <span className='text-sm'>/ day</span></p>
-                    <a href="https://www.yepdesk.com/accomodation" target="_blank" rel="noreferrer" className='text-center'><button className='bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
+                    <a href="https://www.yepdesk.com/accomodation" target="_blank" rel="noreferrer" className='text-center pointer-events-none brightness-50'><button className='bg-[#36fdfd] proshow_button font-chakra' type="button" style={{
                         background
                             : `linear-gradient(45deg, transparent 5%, var(--heading) 5%)`, color: 'black', boxShadow: `6px 0 0 var(--c_red)`,
 
